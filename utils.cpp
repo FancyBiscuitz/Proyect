@@ -23,6 +23,8 @@ void register_user()
     regis.open("users.csv", ios::app); // Abre el archivo
     std::string names, surnames, username, phonenumber, password;
     int age;
+    int i = 0;
+    std::vector<std::string> list = getDataCol("users.csv", 4, 7);
     if(regis.good())
     {
         regis << "\n";
@@ -38,13 +40,18 @@ void register_user()
         std::cout << "Phone number: ";
         std::cin >> phonenumber;
         std::cout << std::endl;
-        std::cout << "Username: ";
-        std::cin >> username;
-        std::cout << std::endl;
+        do
+        {
+            if (i > 0) {std::cout << "Username already taken." << std::endl;}
+            std::cout << "Username: ";
+            std::cin >> username;
+            std::cout << std::endl;
+            i++;
+        } while (std::find(list.begin(), list.end(), username) != list.end());
         std::cout << "Password: ";
         std::cin >> password;
         
-        regis << names << "," << surnames << "," << username << "," << age << "," << phonenumber << "," << password << "," << itemIdMaker("usr", 9);
+        regis << names << "," << surnames << "," << age << "," << phonenumber << "," << username << "," << password << "," << itemIdMaker("usr", 9);
     }
     regis.close();
 }
@@ -126,6 +133,8 @@ void addProduct()
     products.open("products.csv", ios::app); // Abre el archivo
     std::string category, description, id, definition, brand;
     int price, stock;
+    int i = 0;
+    std::vector<std::string> list = getDataCol("products.csv", 2, 7);
     if(products.good())
     {
         products << "\n";
@@ -139,10 +148,15 @@ void addProduct()
         products << description << ",";
         std::cout << std::endl;
 
-        std::cout << "Definition: ";
-        std::getline(std::cin, definition);
+        do
+        {
+            if (i > 0) {std::cout << "Product already exists." << std::endl;}
+            std::cout << "Definition: ";
+            std::getline(std::cin, definition);
+            std::cout << std::endl;
+            i++;
+        } while (std::find(list.begin(), list.end(), definition) != list.end());
         products << definition << ",";
-        std::cout << std::endl;
 
         std::cout << "Price: ";
         std::cin >> price;
@@ -226,12 +240,45 @@ std::vector<std::vector<std::string>> getData(std::string file, int columms)
     return res;
 }
 
+std::vector<std::string> getDataCol(std::string file, int columm, int columms)
+{
+    std::vector<std::string> res;
+    std::string usersup;
+    int i = 0;
+    std::ifstream users;
+    users.open(file, ios::in);
+    while (users.good())
+    {
+        if (i == columms-1)
+        {
+            std::getline(users, usersup, '\n');
+            if (i == columm)
+            {
+                res.push_back(usersup);
+            }
+            i = -1;
+        }
+        else
+        {
+            std::getline(users, usersup, ',');
+            if (i == columm)
+            {
+                res.push_back(usersup);
+            }
+        }
+        i++;
+    }
+    users.close();
+    return res;
+}
+
 bool deleteElementTest(std::string id)
 {
     std::vector<std::vector<std::string>> data;
     data = getData("products.csv", 7);
     std::remove("products.csv");
     int sup = 0;
+    bool res = false;
 
     std::ofstream newfile("products.csv");
     
@@ -239,7 +286,7 @@ bool deleteElementTest(std::string id)
     {
         if (data[i][data[i].size()-1] == id)
         {
-            std::cout << "yo?";
+            res = true;
             continue;
         }
         for (int j = 0; j < data[0].size(); j++)
@@ -253,4 +300,85 @@ bool deleteElementTest(std::string id)
         }
     }
     newfile.close();
+    return res;
 }
+
+void outSpaced(std::string word, int spacing)
+{
+    int left = spacing/2;
+    int right = spacing - left;
+    std::string lefts;
+    std::string rights;
+    for (int i = 0; i < left; i++)
+    {
+        lefts += " ";
+    }
+    for (int j = 0; j < right; j++)
+    {
+        rights += " ";
+    }
+    std::cout << lefts << word << rights;
+}
+
+void showData(std::vector<std::vector<std::string>> data, std::string mode)
+{
+    std::vector<std::string> first;
+    int squares;
+    int biggest;
+    std::string ceilfloor;
+    bool us = false;
+
+    if (mode == "users")
+    {
+        first = {"Names","Surnames","Age","Phone","Username", "id"};
+        biggest = 8;
+        us = true;
+        squares = data[0].size() - 1;
+    }
+    else if (mode == "products")
+    {
+        first = {"Category", "Description", "Definition", "Price", "Stock", "Brand", "Id"};
+        biggest = 11;
+        squares = data[0].size();
+    }
+    
+    for (int i = 0; i < data.size(); i++)
+    {
+        for (int j = 0; j < data[0].size(); j++)
+        {
+            if (data[i][j].size() > biggest)
+            {
+                biggest = data[i][j].size();
+            }
+        }
+    }
+    biggest += 2;
+    for (int i = 0; i < biggest*squares + data[0].size() + 1; i++)
+    {
+        ceilfloor += "-";
+    }
+    std::cout << ceilfloor << std::endl << "|";;
+    for (int s = 0; s < first.size(); s++)
+    {
+        outSpaced(first[s], biggest - first[s].size());
+        std::cout << "|";
+    }
+    std::cout << std::endl;
+    for (int i = 0; i < data.size(); i++)
+    {
+        std::cout << ceilfloor << std::endl << "|";;
+        for (int j = 0; j < data[0].size(); j++)
+        {
+            if (j == 5 && us)
+            {
+                continue;
+            }
+            outSpaced(data[i][j], biggest - data[i][j].size());
+            std::cout << "|";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << ceilfloor;
+}
+
+
