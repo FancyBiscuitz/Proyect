@@ -63,5 +63,5 @@ class Cliente: public User{
 
 int main(void)
 {
-    deleteElementTest("010-RA7y8n");
+    addProduct();
 }
