@@ -2,9 +2,8 @@
 #define PRODUCT_H
 
 #include <iostream>
-#include "category.h"
 
-class Product : public Category
+class Product
 {
     private:
     std::string id;

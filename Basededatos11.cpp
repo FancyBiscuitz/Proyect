@@ -9,59 +9,15 @@
 #include "category.h"
 #include "product.h"
 #include "utils.h"
+#include "admin.h"
+#include "client.h"
 
 using namespace std;
 
-class Administrador: public User{
-    public:
-
-    void addProducts()
-    {
-        
-    }
-
-    void deleteProducts()
-    {
-        
-    }
-
-    void changePrice()
-    { 
-        
-    }
-
-    void changeStock()
-    {
-   
-    }
-};
-
-class Cliente: public User{
-    
-    private:
-    vector<int> shoppingCart;
-    int credit;
- 
-    public:
-
-    void addProductsToShoppingCart()
-    {
-        
-    }
-    
-    void viewShoppingCartProducts()
-    {
-
-    }
-
-    void deleteProducsToShoppingCart()
-    {
-
-    }
-
-};
-
 int main(void)
 {
-    addProduct();
+    Admin da;
+    da.addProducts();
+    da.changePrice("002-H9Ssw6", 727);
+    da.changeStock("002-H9Ssw6", 69);
 }
