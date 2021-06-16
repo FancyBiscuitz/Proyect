@@ -1,13 +1,6 @@
-Category,Description,Definition,Price,Stock,Brand,Ids
-Snacks,descripcion,definicion,32,4,marca,007-G6lnGk
-Limpieza,yessir ?,no shot,43,2,letso,010-cSvuPc
-Snacks,dis,des,34,3,nan,007-jgWMgm
-Desayuno,nan,yes,32,4,sheesh,002-g8eLfM
-Desayuno,nodsf,yessir,34,23,you,002-rLJqa1
-Desayuno,noway,thereis,34,32,helt,002-yLHEFI
-Desayuno,oil,fesl,34,54,helt,002-7M5cul
-Snacks,oil,nothree,23,4,hemo,007-YEeyvH
-Snacks,oil,noe,32,3,helt,007-jab1YX
-Snacks,yog,podg,34,23,what,007-5GTM9B
-Desayuno,poggers,poye,727,69,nice,002-H9Ssw6
-Snacks,des,this,32,4,beee,007-jAGCdc
+Category,Description,Definition,Price,Stock,Brand,Discount,Ids
+Snacks,cerveza,jkklj,32,4,tern,23,007-a
+Snacks,cerveza,jkklj,32,4,tern,23,007-b
+Snacks,cerveza,jkklj,32,4,tern,23,007-c
+Snacks,cerveza,jkklj,32,4,tern,23,007-d
+Snacks,cerveza,jkklj,32,4,tern,23,007-e

@@ -2,11 +2,15 @@
 #define CLIENT_H
 
 #include "user.h"
+#include "item.h"
+#include "utils.h"
+#include <fstream>
 #include <vector>
 
-class Client: public User{
+class Client: public User
+{
 
-    std::vector<std::string> shoppingCart;
+    std::vector<Item> shoppingCart;
     int credit;
  
     public:
@@ -16,6 +20,8 @@ class Client: public User{
     void viewShoppingCartProducts();
 
     void deleteProducsFromShoppingCart();
+
+    std::vector<Item> getShoppingCart();
 
 };
 #endif

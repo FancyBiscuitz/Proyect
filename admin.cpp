@@ -8,9 +8,9 @@ void Admin::addProducts()
     std::ofstream products;
     products.open("products.csv", std::ios::app); // Abre el archivo
     std::string category, description, id, definition, brand;
-    int price, stock;
+    int price, stock, discount;
     int i = 0;
-    std::vector<std::string> list = getDataCol("products.csv", 2, 7);
+    std::vector<std::string> list = getDataCol("products.csv", 2, 8);
     if(products.good())
     {
         products << "\n";
@@ -50,6 +50,11 @@ void Admin::addProducts()
         products << brand << ",";
         std::cout << std::endl;
 
+        std::cout << "Discount: ";
+        std::cin >> discount;
+        products << discount << ",";
+        std::cout << std::endl;
+
         products << getProductId(category);
     }
     products.close();
@@ -58,7 +63,7 @@ void Admin::addProducts()
 bool Admin::deleteProducts(std::string id)
 {
     std::vector<std::vector<std::string>> data;
-    data = getData("products.csv", 7);
+    data = getData("products.csv", 8);
     std::remove("products.csv");
     int sup = 0;
     bool res = false;
@@ -76,6 +81,11 @@ bool Admin::deleteProducts(std::string id)
         {
             if (j == data[0].size()-1)
             {
+                if (i == data.size() - 1)
+                {
+                    newfile << data[i][j];
+                    continue;
+                }
                 newfile << data[i][j] << "\n";
                 continue;
             }
@@ -88,7 +98,7 @@ bool Admin::deleteProducts(std::string id)
 
 bool Admin::changePrice(std::string id, int modify)
 {
-    std::vector<std::vector<std::string>> all = getData("products.csv", 7);
+    std::vector<std::vector<std::string>> all = getData("products.csv", 8);
     std::vector<std::string> sup;
     bool res = false;
     for (int i = 0; i < all.size(); i ++)
@@ -124,7 +134,7 @@ bool Admin::changePrice(std::string id, int modify)
 
 bool Admin::changeStock(std::string id, int modify)
 {
-    std::vector<std::vector<std::string>> all = getData("products.csv", 7);
+    std::vector<std::vector<std::string>> all = getData("products.csv", 8);
     std::vector<std::string> sup;
     bool res = false;
     for (int i = 0; i < all.size(); i ++)
@@ -132,6 +142,42 @@ bool Admin::changeStock(std::string id, int modify)
         if (all[i][all[i].size()-1] == id)
         {
             all[i][4] = std::to_string(modify);
+            res = true;
+            break;
+        }
+    }
+    if (res)
+    {
+        std::remove("products.csv");
+        std::ofstream newfile("products.csv");
+        for (int i = 0; i < all.size(); i++)
+        {
+            for (int j = 0; j < all[0].size(); j++)
+            {
+                if (j == all[0].size()-1)
+                {
+                    newfile << all[i][j] << "\n";
+                    continue;
+                }
+                newfile << all[i][j] << ",";
+            }
+        }
+        return res;
+    }
+    std::cout << "Id not found." << std::endl;
+    return res;
+}
+
+bool Admin::changeDiscount(std::string id, int modify)
+{
+    std::vector<std::vector<std::string>> all = getData("products.csv", 8);
+    std::vector<std::string> sup;
+    bool res = false;
+    for (int i = 0; i < all.size(); i ++)
+    {
+        if (all[i][all[i].size()-1] == id)
+        {
+            all[i][6] = std::to_string(modify);
             res = true;
             break;
         }
