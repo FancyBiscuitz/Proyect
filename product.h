@@ -22,9 +22,9 @@ class Product
 
     //setters
     void setId(std::string _id);
-    void setPrecio(int _price);
-    void setDescripcion(std::string _definition);
+    void setPrice(int _price);
+    void setDefinition(std::string _definition);
     void setStock(int _stock);
-    void setBrand(int _brand);
+    void setBrand(std::string _brand);
 };
 #endif

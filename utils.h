@@ -21,5 +21,6 @@ std::vector<std::vector<std::string>> getData(std::string file, int columms);
 void outSpaced(std::string word, int spacing);
 void showData(std::vector<std::vector<std::string>> data, std::string mode);
 std::vector<std::string> getDataCol(std::string file, int columm, int columms);
+std::string getRole();
 
 #endif

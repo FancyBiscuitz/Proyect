@@ -24,11 +24,11 @@ void Product::setId(std::string _id)
 {
     id = _id;
 }
-void Product::setPrecio(int _price)
+void Product::setPrice(int _price)
 {
     price = _price;
 }
-void Product::setDescripcion(std::string _definition)
+void Product::setDefinition(std::string _definition)
 {
     definition = _definition;
 }
@@ -36,8 +36,8 @@ void Product::setStock(int _stock)
 {
     stock = _stock;
 }
-void Product::setBrand(int _brand)
+void Product::setBrand(std::string _brand)
 {
-brand = _brand;
+    brand = _brand;
 }
 

@@ -24,6 +24,7 @@ void register_user()
     std::string names, surnames, username, phonenumber, password;
     int age;
     int i = 0;
+    std::string role = getRole();
     std::vector<std::string> list = getDataCol("users.csv", 4, 7);
     if(regis.good())
     {
@@ -51,7 +52,7 @@ void register_user()
         std::cout << "Password: ";
         std::cin >> password;
         
-        regis << names << "," << surnames << "," << age << "," << phonenumber << "," << username << "," << password << "," << itemIdMaker("usr", 9);
+        regis << names << "," << surnames << "," << age << "," << phonenumber << "," << username << "," << password << "," << itemIdMaker(role, 9);
     }
     regis.close();
 }
@@ -179,7 +180,7 @@ void addProduct()
     products.close();
 }
 
-std::vector<std::vector<std::string>> getData(std::string support, int parameter, std::string file, int columms)
+std::vector<std::vector<std::string>> getData(std::string support, int index, std::string file, int columms)
 {
     std::vector<std::vector<std::string>> res;
     std::vector<std::string> credentials;
@@ -193,7 +194,7 @@ std::vector<std::vector<std::string>> getData(std::string support, int parameter
         {
             std::getline(users, usersup, '\n');
             credentials.push_back(usersup);
-            if (credentials[parameter] == support)
+            if (credentials[index] == support)
             {
                 res.push_back(credentials);
             }
@@ -381,4 +382,26 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode)
     std::cout << ceilfloor;
 }
 
-
+std::string getRole()
+{
+    int attempts =  3;
+    std::string m;
+    std::cout << "Who is registering? >" << std::endl << "[1] Admin | [2] Client" << std::endl;
+    std::cin >> m;
+    if (m == "1")
+    {
+        while (attempts > 0)
+        {
+            if (attempts < 3) {std::cout << "You have " << attempts << "attempts left." << std::endl;}
+            std::cout << "Password to add new admin: " << std::endl;
+            std::cin >> m;
+            if (m == "ultrasecretpasword")
+            {
+                return "adm";
+            }
+            attempts--;
+        }
+        return "nan";
+    }
+    return "usr";
+}
