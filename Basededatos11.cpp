@@ -16,8 +16,11 @@ using namespace std;
 
 int main(void)
 {
-    Admin da;
-    da.addProducts();
-    da.changePrice("002-H9Ssw6", 727);
-    da.changeStock("002-H9Ssw6", 69);
+    Client dod;
+    std::string id;
+    while(true)
+    {
+        dod.addProductsToShoppingCart();
+        std::cout << "count: " << (dod.getShoppingCart()).size();
+    }
 }

@@ -14,5 +14,7 @@ class Admin: public User
     bool changePrice(std::string id, int modify);
 
     bool changeStock(std::string id, int modify);
+
+    bool changeDiscount(std::string id, int modify);
 };
 #endif

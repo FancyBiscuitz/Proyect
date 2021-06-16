@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <stdio.h>
 
 using namespace std;
 
@@ -17,6 +18,14 @@ std::string itemIdMaker(std::string base, int size)
     return id;
 }
 
+void clean_stdin(void)
+{
+    int c;
+    do {
+        c = getchar();
+    } while (c != '\n' && c != EOF);
+}
+
 void register_user()
 { 
     std::ofstream regis;
@@ -28,6 +37,8 @@ void register_user()
     std::vector<std::string> list = getDataCol("users.csv", 4, 7);
     if(regis.good())
     {
+        fflush(stdin);
+        //clean_stdin();
         regis << "\n";
         std::cout << "Names: ";
         std::getline(std::cin, names);
@@ -338,7 +349,7 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode)
     }
     else if (mode == "products")
     {
-        first = {"Category", "Description", "Definition", "Price", "Stock", "Brand", "Id"};
+        first = {"Category", "Description", "Definition", "Price", "Stock", "Brand", "Discount", "Id"};
         biggest = 11;
         squares = data[0].size();
     }
@@ -386,16 +397,16 @@ std::string getRole()
 {
     int attempts =  3;
     std::string m;
-    std::cout << "Who is registering? >" << std::endl << "[1] Admin | [2] Client" << std::endl;
+    std::cout << "Who is registering?" << std::endl << "[1] Admin | [2] Client" << std::endl;
     std::cin >> m;
     if (m == "1")
     {
         while (attempts > 0)
         {
             if (attempts < 3) {std::cout << "You have " << attempts << "attempts left." << std::endl;}
-            std::cout << "Password to add new admin: " << std::endl;
+            std::cout << "Password to add new admin: " << std::endl << ">";
             std::cin >> m;
-            if (m == "ultrasecretpasword")
+            if (m == "ultrasecretpassword")
             {
                 return "adm";
             }
@@ -405,3 +416,27 @@ std::string getRole()
     }
     return "usr";
 }
+
+bool validateId(std::string id, std::string file, int coluums)
+{
+    std::vector<std::string> ids = getDataCol(file, coluums-1, coluums);
+    for (int i = 0; i < ids.size(); i++)
+    {
+        if (ids[i] == id)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*
+bool operator==(const Item item1, const Item item2) 
+{
+    if (item1.getId() == item2.getId())
+    {
+        return true;
+    }
+    return false;
+}
+*/
