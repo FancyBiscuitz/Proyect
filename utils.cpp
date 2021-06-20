@@ -353,7 +353,12 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode)
         biggest = 11;
         squares = data[0].size();
     }
-    
+    else if (mode == "bills")
+    {
+        first = {"Item id", "Brand", "Item", "Item price", "Amount", "Discount", "Total", "Buyer"};
+        biggest = 10;
+        squares = data[0].size();
+    }
     for (int i = 0; i < data.size(); i++)
     {
         for (int j = 0; j < data[0].size(); j++)
@@ -430,13 +435,3 @@ bool validateId(std::string id, std::string file, int coluums)
     return false;
 }
 
-/*
-bool operator==(const Item item1, const Item item2) 
-{
-    if (item1.getId() == item2.getId())
-    {
-        return true;
-    }
-    return false;
-}
-*/

@@ -15,14 +15,14 @@ class Product
     public:
     //getters
     std::string getId();
-    int getPrice();
+    float getPrice();
     std::string getDefinition();
     std::string getBrand();
     int getStock();
 
     //setters
     void setId(std::string _id);
-    void setPrice(int _price);
+    void setPrice(float _price);
     void setDefinition(std::string _definition);
     void setStock(int _stock);
     void setBrand(std::string _brand);

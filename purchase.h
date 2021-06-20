@@ -4,39 +4,34 @@
 #include <iostream>
 #include "client.h"
 #include "utils.h"
+#include "item.h"
 
 class Purchase
 {
-private:
-    std::string purchaseDate;
-    std::string time;
-    int discount;
-    std::string purchaseNumber;
-    int Total;
-    int tax;
-public:
+    private:
+    std::string buyer;
+    std::string itemId;
+    std::string itemDefinition;
+    std::string itemBrand;
+    float itemPrice;
+    int itemDiscount;
+    int itemStock;
+    float total;
+    int amount;
+    public:
 
-    bool validatePurchase(std::vector<Item> items);
+    Purchase();
+    Purchase(Item pdt, int _amount, std::string client_id);
     
-    std::string getPurchaseDate();
-    std::string getTime();
-    int getDiscount();
-    std::string getPurchaseNumber();
-    int getTotal();
-    int getTax();
-
-    void setPurchaseDate(string _purchaseDate);
-    void setTime(string _time);
-    void setDiscount(int _discount);
-    void setPurchaseNumber(string _purchaseNumber);
-    void setTotal(int _Total);
-    void setTax(int _tax);
-
+    std::string getBuyer();
+    std::string getItemId();
+    std::string getItemDefinition();
+    std::string getItemBrand();
+    float getItemPrice();
+    int getItemDiscount();
+    float getTotal();
+    int getAmount();
+    int getStock();
 };
-  
-/*
-Metodos:
--Validar compra
--Comprar
-*/
+
 #endif

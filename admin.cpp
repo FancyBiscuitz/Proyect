@@ -8,7 +8,8 @@ void Admin::addProducts()
     std::ofstream products;
     products.open("products.csv", std::ios::app); // Abre el archivo
     std::string category, description, id, definition, brand;
-    int price, stock, discount;
+    int stock, discount;
+    float price;
     int i = 0;
     std::vector<std::string> list = getDataCol("products.csv", 2, 8);
     if(products.good())

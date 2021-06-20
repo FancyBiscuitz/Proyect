@@ -1,40 +1,31 @@
 #include "purchase.h"
 
-using namespace std;
-
-string Purchase::getPurchaseDate()
+Purchase::Purchase(Item _pdt, int _amount, std::string client_id)
 {
-    return purchaseDate;
+    buyer = client_id;
+    itemId = _pdt.getId();
+    itemDefinition = _pdt.getDefinition();
+    itemBrand = _pdt.getBrand();
+    itemDiscount = _pdt.getDiscount();
+    itemPrice = _pdt.getPrice();
+    itemStock = _pdt.getStock();
+    if (_amount > _pdt.getStock())
+    {
+        amount = _pdt.getStock();
+    }
+    else
+    {
+        amount = _amount;
+    }
+    total = (itemPrice*(itemDiscount/100))*amount;
 }
 
-string Purchase::getTime()
-{
-    return time;
-}
-
-int Purchase::getDiscount()
-{
-    return discount;
-}
-
-string Purchase::getPurchaseNumber()
-{
-    return purchaseNumber;
-}
-
-int Purchase::getTotal()
-{
-    return Total;
-}
-
-int Purchase::getTax()
-{
-    return tax;
-}
-
-void Purchase::setPurchaseDate(string _purchaseDate){purchaseDate = _purchaseDate;}
-void Purchase::setTime(string _time){time = _time;} 
-void Purchase::setDiscount(int _discount){discount = _discount;}
-void Purchase::setPurchaseNumber(string _purchaseNumber){purchaseNumber = _purchaseNumber;}
-void Purchase::setTotal(int _Total){Total = _Total;}
-void Purchase::setTax(int _tax){tax = _tax;}
+std::string Purchase::getBuyer() {return buyer;}
+std::string Purchase::getItemId() {return itemId;}
+std::string Purchase::getItemDefinition() {return itemDefinition;}
+std::string Purchase::getItemBrand() {return itemBrand;}
+float Purchase::getItemPrice() {return itemPrice;}
+int Purchase::getItemDiscount() {return itemDiscount;}
+float Purchase::getTotal() {return total;}
+int Purchase::getAmount() {return amount;}
+int Purchase::getStock() {return itemStock;}

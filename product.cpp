@@ -4,7 +4,7 @@ std::string Product::getId()
 {
     return id;
 }
-int Product::getPrice()
+float Product::getPrice()
 {
     return price;
 }
@@ -24,7 +24,7 @@ void Product::setId(std::string _id)
 {
     id = _id;
 }
-void Product::setPrice(int _price)
+void Product::setPrice(float _price)
 {
     price = _price;
 }
