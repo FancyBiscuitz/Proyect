@@ -11,16 +11,11 @@
 #include "utils.h"
 #include "admin.h"
 #include "client.h"
+#include "purchase.h"
 
 using namespace std;
 
 int main(void)
 {
-    Client dod;
-    std::string id;
-    while(true)
-    {
-        dod.addProductsToShoppingCart();
-        std::cout << "count: " << (dod.getShoppingCart()).size();
-    }
+    
 }

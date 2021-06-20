@@ -11,7 +11,8 @@ class Client: public User
 {
 
     std::vector<Item> shoppingCart;
-    int credit;
+    std::vector<int> quantity;
+    float credit;
  
     public:
 
@@ -22,6 +23,10 @@ class Client: public User
     void deleteProducsFromShoppingCart();
 
     std::vector<Item> getShoppingCart();
+
+    std::vector<int> getQuantity();
+
+    float getCredit();
 
 };
 #endif

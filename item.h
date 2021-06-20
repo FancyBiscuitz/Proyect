@@ -13,9 +13,11 @@ class Item : public Product
     int discount;
 
     public:
+    Item();
     Item(std::string);
     std::string getCategory();
     std::string getDescription();
+    int getDiscount();
     
     void setCategory(std::string _category);
     void setDescription(std::string _description);
