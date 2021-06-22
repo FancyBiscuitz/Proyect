@@ -28,6 +28,7 @@ void Client::addProductsToShoppingCart()
                 check2 = true;
                 break;
             }
+            check2 = false;
         }
         if (check2)
         {
