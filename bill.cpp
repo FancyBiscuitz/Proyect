@@ -19,7 +19,7 @@ void Bill::processBill(Client _cliente)
     }
     addPurchasesToRecord();
     sup = makeBill();
-    std::string str = "history|" + _cliente.getId();
+    std::string str = _cliente.getId() + "_history" + ".csv";
     addBillToRecord(sup, str);
 }
 
@@ -43,13 +43,13 @@ void Bill::addPurchasesToRecord()
     purchases.open("purchases.csv", std::ios::app);
     for (int i = 0; i < contents.size(); i++)
     {
-        purchases << contents[i].getItemId();
-        purchases << contents[i].getItemBrand();
-        purchases << contents[i].getItemDefinition();
-        purchases << contents[i].getItemPrice();
-        purchases << contents[i].getAmount();
-        purchases << contents[i].getItemDiscount();
-        purchases << contents[i].getTotal();
+        purchases << contents[i].getItemId() << ",";
+        purchases << contents[i].getItemBrand() << ",";
+        purchases << contents[i].getItemDefinition() << ",";
+        purchases << contents[i].getItemPrice() << ",";
+        purchases << contents[i].getAmount() << ",";
+        purchases << contents[i].getItemDiscount() << ",";
+        purchases << contents[i].getTotal() << ",";
         purchases << contents[i].getBuyer();
         purchases << "\n";
     }
@@ -78,12 +78,14 @@ std::vector<std::vector<std::string>> Bill::makeBill()
 
 void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile)
 {
-    std::fstream history;
-    history.open(userHistoryFile, std::ios::app);
-    if(!history.good())
+    std::ofstream test(userHistoryFile);
+    if(!test.good())
     {
-        history.close();
-        std::ofstream newHistory(userHistoryFile);
+        std::cout << "kindad sas" << std::endl;
+        std::ofstream newh(userHistoryFile);
+        newh.close();
+        std::fstream newHistory;
+        newHistory.open(userHistoryFile, std::ios::app);
         newHistory << _content.size() << ",";
         newHistory << "-,-,-,-,-,-,-" << "\n";
         for (int i = 0; i < _content.size(); i++)
@@ -92,7 +94,7 @@ void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::
             {
                 if (j == _content[0].size() - 1)
                 {
-                    newHistory << _content[i][j] << "\n";
+                    newHistory << _content[i][j];
                     break;
                 }
                 newHistory << _content[i][j] << ",";
@@ -101,6 +103,9 @@ void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::
         newHistory.close();
         return;
     }
+    test.close();
+    std::fstream history;
+    history.open(userHistoryFile, std::ios::app);
     history << _content.size() << ",";
     history << "-,-,-,-,-,-,-" << "\n";
     for (int i = 0; i < _content.size(); i++)

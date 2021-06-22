@@ -9,7 +9,7 @@ class Product
     std::string id;
     int stock;
     std::string brand;
-    int price;
+    float price;
     std::string definition;
 
     public:

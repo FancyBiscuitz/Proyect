@@ -17,7 +17,7 @@ Purchase::Purchase(Item _pdt, int _amount, std::string client_id)
     {
         amount = _amount;
     }
-    total = (itemPrice*(itemDiscount/100))*amount;
+    total = (itemPrice - (itemPrice*(itemDiscount/100.0)) )* (float) amount;
 }
 
 std::string Purchase::getBuyer() {return buyer;}
