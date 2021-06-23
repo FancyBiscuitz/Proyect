@@ -1,5 +1,6 @@
 #include "utils.h"
 #include <stdio.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -63,6 +64,8 @@ void register_user()
         std::cout << "Password: ";
         std::cin >> password;
         
+        cout << "\t\tRegistrado Correctamente..."<< endl;
+        Sleep(2000);
         regis << names << "," << surnames << "," << age << "," << phonenumber << "," << username << "," << password << "," << itemIdMaker(role, 9);
     }
     regis.close();
@@ -434,4 +437,3 @@ bool validateId(std::string id, std::string file, int coluums)
     }
     return false;
 }
-

@@ -18,6 +18,62 @@ using namespace std;
 
 int main(void)
 {
+   /*
+    while (!logged)
+    {
+        1. register
+        2. login
+        3. exit
+    }
+    string role = verificar si es admin o client
+    instanciar usuario
+    if (role == client)
+    {
+        cargar carrito de compras 
+    }
+    while (true)
+    {
+        int choice = menu principal(admin o client):
+        switch (role)
+        {
+            case client
+            {
+            do
+            {
+                switch
+                {
+                    ver productos 
+                    filtrar productos 
+                    anadir productos a carrito
+                    eliminar productos de carrito
+                    ver carrito 
+                    comprar
+                    regresar
+                    cerrar sesion
+                }
+            } while (choice is invalid)
+            }
+            
+            case admin
+            {
+                do 
+                {
+                    switch
+                    {
+                        añadir productos
+                        eliminar productos
+                        cambiar precio
+                        cambiar stock
+                        cambiar descuento
+                        regresar
+                        cerrar sesion  
+                    }
+                }while (choice is invalid)
+            }
+            
+        }
+    }
+   */
     Client cliente;
     cliente.setId("testid");
     std::vector<Purchase> billData;
