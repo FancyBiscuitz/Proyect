@@ -78,29 +78,25 @@ std::vector<std::vector<std::string>> Bill::makeBill()
 
 void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile)
 {
-    std::ofstream test(userHistoryFile);
+    std::ifstream test(userHistoryFile);
     if(!test.good())
     {
-        std::cout << "kindad sas" << std::endl;
-        std::ofstream newh(userHistoryFile);
-        newh.close();
-        std::fstream newHistory;
-        newHistory.open(userHistoryFile, std::ios::app);
-        newHistory << _content.size() << ",";
-        newHistory << "-,-,-,-,-,-,-" << "\n";
+        std::ofstream newh(userHistoryFile, std::ios::app);
+        newh << _content.size() << ",";
+        newh << "-,-,-,-,-,-,-" << "\n";
         for (int i = 0; i < _content.size(); i++)
         {
             for (int j = 0; j < _content[0].size(); j++)
             {
                 if (j == _content[0].size() - 1)
                 {
-                    newHistory << _content[i][j];
+                    newh << _content[i][j] << "\n";
                     break;
                 }
-                newHistory << _content[i][j] << ",";
+                newh << _content[i][j] << ",";
             }
         }
-        newHistory.close();
+        newh.close();
         return;
     }
     test.close();
