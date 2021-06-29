@@ -330,6 +330,10 @@ void outSpaced(std::string word, int spacing)
 //utils
 void showData(std::vector<std::vector<std::string>> data, std::string mode)
 {
+    if (data.size() == 0)
+    {
+        return;
+    }
     std::vector<std::string> first;
     int squares;
     int biggest;
@@ -349,7 +353,7 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode)
         biggest = 11;
         squares = data[0].size();
     }
-    else if (mode == "bills")
+    else if (mode == "purchases")
     {
         first = {"Item id", "Brand", "Item", "Item price", "Amount", "Discount", "Total", "Buyer"};
         biggest = 10;

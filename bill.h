@@ -17,9 +17,9 @@ private:
 public:
     Bill(std::vector<Purchase> _contents);
 
-    void processBill(Client _cliente);
-    bool validateBill(Client _cliente);
-    void printBill(Client _cliente);
+    void processBill(Client &_cliente);
+    bool validateBill(Client &_cliente);
+    void printBill(Client &_cliente);
     void addPurchasesToRecord();
     std::vector<std::vector<std::string>> makeBill();
     void addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile);

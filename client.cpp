@@ -15,7 +15,7 @@ Client::Client(std::vector<std::vector<std::string>> data)
 
 Client::Client()
 {
-    std::cout << "pog";
+    
 }
 
 /*
@@ -122,6 +122,16 @@ void Client::deleteProducsFromShoppingCart()
     }
 }
 
+void Client::emptyShoppingCart()
+{
+    int sup = shoppingCart.size() - 1;
+    for (int i = sup; i >= 0; i--)
+    {
+        shoppingCart.erase(shoppingCart.begin() + i);
+        quantity.erase(quantity.begin()+i); 
+    }
+}
+
 std::vector<Item> Client::getShoppingCart()
 {
     return shoppingCart;
@@ -177,10 +187,6 @@ void Client::loadShopCart()
 
 void Client::saveShopCart()
 {
-    if (shoppingCart.size() == 0)
-    {
-        return;
-    }
     std::ofstream newh(getId() + "_shopcart.csv");
     for (int i = 0; i < shoppingCart.size(); i++)
     {

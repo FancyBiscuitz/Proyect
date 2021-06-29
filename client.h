@@ -27,6 +27,8 @@ class Client: public User
 
     void deleteProducsFromShoppingCart();
 
+    void emptyShoppingCart();
+
     std::vector<Item> getShoppingCart();
 
     std::vector<int> getQuantity();
