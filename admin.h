@@ -15,10 +15,12 @@ class Admin: public User
 
     bool deleteProducts(std::string id);
 
-    bool changePrice(std::string id, int modify);
+    bool changePrice(std::string id, float modify);
 
     bool changeStock(std::string id, int modify);
 
     bool changeDiscount(std::string id, int modify);
+
+    void viewPurchases();
 };
 #endif

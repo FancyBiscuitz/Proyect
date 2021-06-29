@@ -107,11 +107,12 @@ void System::printMenu(std::string mode)
         std::cout <<"|                        Please select an option.                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|            [1]Browse products          [2]Show cart                 |" << "\n";
+        std::cout <<"|   [1]Browse products    [2]Add products to cart    [3]Show cart     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|        [3]Buy products in cart     [4]Log out     [5]Close          |" << "\n";
+        std::cout <<"|       [4]Buy products in cart     [5]Delete products from cart      |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
+        std::cout <<"|                  [6]Log out                 [7]Close                |" << "\n";
         std::cout << " ---------------------------------------------------------------------" << "\n";
     }
     if (mode == "admin")
@@ -127,7 +128,7 @@ void System::printMenu(std::string mode)
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|   [4]Change price        [5]Change stock        [6]Change discount  |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                  [7]Log out             [8]Close                    |" << "\n";
+        std::cout <<"|   [7]View purchases      [8]Log out             [9]Close            |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout << " ---------------------------------------------------------------------" << "\n";
     }
@@ -137,11 +138,11 @@ void System::printMenu(std::string mode)
         std::cout <<"|                                                                      |" << "\n";
         std::cout <<"|                             Browse by:                               |" << "\n";
         std::cout <<"|                                                                      |" << "\n";
-        std::cout <<"|             [1]Category                 [2]Definition                |" << "\n";
+        std::cout <<"|       [1]Category          [2]Definition          [3]Brand           |" << "\n";
         std::cout <<"|                                                                      |" << "\n";
         std::cout <<"|                                                                      |" << "\n";
-        std::cout <<"|             [3]Brand                    [4]Id                        |" << "\n";
-        std::cout <<"|                                                          [5]Return   |" << "\n";
+        std::cout <<"|                    [4]Id                  [5]All                     |" << "\n";
+        std::cout <<"|                                                                      |" << "\n";
         std::cout << " ---------------------------------------------------------------------" << "\n";
     }
     if (mode == "login")
@@ -212,16 +213,16 @@ std::string System::mainMenu(std::string mode)
     printMenu(mode);
     std::cout << ">> ";
     std::cin >> option;
-    option = checkValidOption(option, 8, "0");
+    option = checkValidOption(option, 9, "0");
     if (mode == "client")
     {
         switch (std::stoi(option))
         {
 
-        case 4:
+        case 6:
             return "logout";
             break;
-        case 5:
+        case 7:
             exit(1);
             break;
         
@@ -235,10 +236,10 @@ std::string System::mainMenu(std::string mode)
         switch (std::stoi(option))
         {
 
-        case 7:
+        case 8:
             return "logout";
             break;
-        case 8:
+        case 9:
             exit(1);
             break;
         
@@ -247,7 +248,7 @@ std::string System::mainMenu(std::string mode)
             break;
         }
     }
-    return "nan";
+    return option;
 }
 
 std::string System::processMainMenuOption(std::string mode, std::string option)
@@ -266,6 +267,12 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
         case 3:
             return option;
             break;
+        case 4:
+            return option;
+            break;
+        case 5:
+            return option;
+            break;
         default:
             break;
         }
@@ -275,19 +282,22 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
         switch (std::stoi(option))
         {
         case 2:
-            return "4";
-            break;
-        case 3:
-            return "5";
-            break;
-        case 4:
             return "6";
             break;
-        case 5:
+        case 3:
             return "7";
             break;
-        case 6:
+        case 4:
             return "8";
+            break;
+        case 5:
+            return "9";
+            break;
+        case 6:
+            return "10";
+            break;
+        case 7:
+            return "11";
             break;
         default:
             break;
@@ -298,11 +308,13 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
 
 void System::browseProducts()
 {
+    system("CLS");
     int option;
     std::string choice;
     printMenu("browse");
     std::cout << ">> ";
     std::cin >> option;
+    option = std::stoi(checkValidOption(std::to_string(option), 5, "5"));
     switch(option)
     {
         case 1:
@@ -329,6 +341,7 @@ void System::browseProducts()
             std::getline(std::cin, choice);
             showData(getData(choice,7,"products.csv",8), "products");
         case 5:
+            showData(getData("products.csv",8), "products");
             break;
     }
 }

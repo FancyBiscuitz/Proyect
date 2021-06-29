@@ -24,7 +24,7 @@ void outSpaced(std::string word, int spacing);
 void showData(std::vector<std::vector<std::string>> data, std::string mode);
 std::vector<std::string> getDataCol(std::string file, int columm, int columms);
 std::string getRole();
-bool validateId(std::string id, std::string mode, int coluums);
+bool validateId(std::string id, std::string file, int coluums);
 std::string getTimeDate();
 void printMenu(std::string mode);
 std::string getInitials(std::string word, int limit);

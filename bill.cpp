@@ -9,7 +9,7 @@ Bill::Bill(std::vector<Purchase> _contents)
     }
 }
 
-void Bill::processBill(Client _cliente)
+void Bill::processBill(Client &_cliente)
 {
     Admin master;
     std::vector<std::vector<std::string>> sup;
@@ -21,10 +21,11 @@ void Bill::processBill(Client _cliente)
     sup = makeBill();
     std::string str = _cliente.getId() + "_history" + ".csv";
     addBillToRecord(sup, str);
-    _cliente.getShoppingCart() = {};
+    _cliente.getShoppingCart().clear();
+    printBill(_cliente);
 }
 
-bool Bill::validateBill(Client _cliente)
+bool Bill::validateBill(Client &_cliente)
 {
     if (_cliente.getCredit() < total)
     {
@@ -33,7 +34,7 @@ bool Bill::validateBill(Client _cliente)
     return true;
 }
 
-void Bill::printBill(Client _cliente)
+void Bill::printBill(Client &_cliente)
 {
     int biggest = 10;
     std::string ceilfloor;
