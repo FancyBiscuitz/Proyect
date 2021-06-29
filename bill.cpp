@@ -21,6 +21,7 @@ void Bill::processBill(Client _cliente)
     sup = makeBill();
     std::string str = _cliente.getId() + "_history" + ".csv";
     addBillToRecord(sup, str);
+    _cliente.getShoppingCart() = {};
 }
 
 bool Bill::validateBill(Client _cliente)
@@ -32,9 +33,53 @@ bool Bill::validateBill(Client _cliente)
     return true;
 }
 
-void Bill::printBill()
+void Bill::printBill(Client _cliente)
 {
-
+    int biggest = 10;
+    std::string ceilfloor;
+    std::string spacing;
+    std::string halfspacing;
+    std::vector<std::string> para = {"Item id", "Brand", "Item", "Item price", "Amount", "Discount", "Total", "Buyer"};
+    std::vector<std::vector<std::string>> purchases = makeBill();
+    for (int i = 0; i < purchases.size(); i++)
+    {
+        for (int j = 0; j < purchases[0].size(); j++)
+        {
+            if (purchases[i][j].size() > biggest)
+            {
+                biggest = purchases[i][j].size();
+            }
+        }
+    }
+    for (int c = 0; c < biggest*(purchases[0].size()); c++)
+    {
+        if (c < ((biggest*(purchases[0].size()))-45)/2)
+        {
+            halfspacing += " ";
+        }
+        ceilfloor += "-";
+        spacing += " ";
+    }
+    std::cout << " " << ceilfloor << std::endl << "|";
+    for (int t = 0; t < para.size(); t++)
+    {
+        outSpaced(para[t], biggest - para[t].size());
+    }
+    std::cout << "|" << "\n";
+    for (int i = 0; i < purchases.size(); i++)
+    {
+        std::cout << "|";
+        for (int j = 0; j < purchases[0].size(); j++)
+        {
+            outSpaced(purchases[i][j], biggest - purchases[i][j].size());
+        }
+        std::cout << "|" << "\n";
+    }
+    std::cout << " " << ceilfloor << std::endl;
+    std::cout << halfspacing << "finished purchase at UTC: " << getTimeDate();
+    std::cout << halfspacing << "                     Total: " << total << std::endl;
+    std::cout << halfspacing << "   Purchased by: " << _cliente.getNames() << " " << _cliente.getSurnames() << std::endl;
+    std::cout << " " << ceilfloor << std::endl;
 }
 
 void Bill::addPurchasesToRecord()

@@ -2,6 +2,40 @@
 
 using namespace std;
 
+Client::Client(std::vector<std::vector<std::string>> data)
+{
+    setNames(data[0][0]);
+    setSurnames(data[0][1]);
+    setAge(std::stoi(data[0][2]));
+    setPhoneNumber(data[0][3]);
+    setUsername(data[0][4]);
+    setPassword(data[0][5]);
+    setId(data[0][6]);
+}
+
+Client::Client()
+{
+    std::cout << "pog";
+}
+
+/*
+Client::~Client()
+{
+    for (int i = 0; i < quantity.size(); i++)
+    {
+        delete &shoppingCart[i];
+        delete &quantity[i];
+    }
+    delete &credit;
+    delete &getNames();
+    delete &getSurnames();
+    delete &getAge();
+    delete &getPhoneNumber();
+    delete &getUsername();
+    delete &getPassword();
+    delete &getId();
+}*/
+
 void Client::addProductsToShoppingCart()
 {
     string id;
@@ -101,4 +135,56 @@ std::vector<int> Client::getQuantity()
 float Client::getCredit()
 {
     return credit;
+}
+
+void Client::loadShopCart()
+{
+    std::string fil = getId() + "_shopcart.csv";
+    std::string sup;
+    std::vector<std::string> sup2;
+    int count = 0;
+    std::ifstream test(fil);
+    if(!test.good())
+    {
+        return;
+    }
+    test.close();
+    std::ifstream shopcart;
+    shopcart.open(fil);
+    while (shopcart.good())
+    {
+        if (count == 2)
+        {
+            Item appen(sup2[0]);
+            shoppingCart.push_back(appen);
+            quantity.push_back(std::stoi(sup2[1]));
+            count = 0;
+            sup2 = {};
+        }
+        if (count == 1)
+        {
+            std::getline(shopcart, sup, '\n');
+        }
+        else
+        {
+            std::getline(shopcart, sup, ',');
+        }
+        sup2.push_back(sup);
+        count++;
+    }
+    shopcart.close();
+}
+
+void Client::saveShopCart()
+{
+    if (shoppingCart.size() == 0)
+    {
+        return;
+    }
+    std::ofstream newh(getId() + "_shopcart.csv");
+    for (int i = 0; i < shoppingCart.size(); i++)
+    {
+        newh << shoppingCart[i].getId() << "," << quantity[i] << "\n";
+    }
+    newh.close();
 }

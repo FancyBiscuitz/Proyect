@@ -13,7 +13,7 @@ std::string User::getPassword() {return password;}
 void User::setNames(std::string _names) {names = _names;}
 void User::setSurnames(std::string _surnames) {surnames = _surnames;}
 void User::setUsername(std::string _username){userName = _username;}
-void User::setEdad(int _age) {age = _age;}
+void User::setAge(int _age) {age = _age;}
 void User::setPhoneNumber(std::string _phonenumber) {phoneNumber = _phonenumber;}
 void User::setId(std::string _id) {id = _id;}
 void User::setPassword(std::string _password) {password = _password;}

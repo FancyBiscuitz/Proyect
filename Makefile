@@ -1,6 +1,6 @@
 
-output: Market.o utils.o user.o admin.o client.o product.o item.o purchase.o bill.o 
-	g++ Market.o utils.o user.o admin.o client.o product.o item.o purchase.o bill.o -o output
+output: Market.o utils.o user.o admin.o client.o product.o item.o purchase.o bill.o system.o 
+	g++ Market.o utils.o user.o admin.o client.o product.o item.o purchase.o bill.o system.o -o output
 
 Market.o: Market.cpp
 	g++ -c Market.cpp
@@ -28,6 +28,9 @@ purchase.o: purchase.cpp purchase.h
 
 bill.o: bill.cpp bill.h
 	g++ -c bill.cpp
+
+system.o: system.cpp system.h
+	g++ -c system.cpp
 
 clean:
 	rm *.o output

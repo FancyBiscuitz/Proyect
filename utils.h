@@ -25,6 +25,11 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode);
 std::vector<std::string> getDataCol(std::string file, int columm, int columms);
 std::string getRole();
 bool validateId(std::string id, std::string mode, int coluums);
-//bool operator==(const Item item1, const Item item2);
-
+std::string getTimeDate();
+void printMenu(std::string mode);
+std::string getInitials(std::string word, int limit);
+std::string checkValidOption(std::string option, int limit, std::string defaul);
+std::string loginMenu();
+std::string mainMenu(std::string mode);
+std::string processMainMenuOption(std::string mode, std::string option);
 #endif

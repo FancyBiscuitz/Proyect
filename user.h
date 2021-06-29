@@ -1,6 +1,7 @@
 #ifndef USER_H
 #define USER_H
 #include <iostream>
+#include <vector>
 
 class User
 {
@@ -27,7 +28,7 @@ public:
     void setNames(std::string _names);
     void setSurnames(std::string _surnames);
     void setUsername(std::string _username);
-    void setEdad(int _age);
+    void setAge(int _age);
     void setPhoneNumber(std::string _phonenumber);
     void setId(std::string _id);
     void setPassword(std::string _password);

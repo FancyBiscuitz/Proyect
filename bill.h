@@ -4,7 +4,9 @@
 #include "purchase.h"
 #include "client.h"
 #include "admin.h"
+#include "utils.h"
 #include <iostream>
+#include <chrono>
 #include <ctime>
 
 class Bill
@@ -17,7 +19,7 @@ public:
 
     void processBill(Client _cliente);
     bool validateBill(Client _cliente);
-    void printBill();
+    void printBill(Client _cliente);
     void addPurchasesToRecord();
     std::vector<std::vector<std::string>> makeBill();
     void addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile);
