@@ -7,6 +7,10 @@ class Admin: public User
 {
     public:
 
+    Admin();
+
+    Admin(std::vector<std::vector<std::string>> data);
+
     void addProducts();
 
     bool deleteProducts(std::string id);

@@ -1,8 +1,5 @@
-Category,Description,Definition,Price,Stock,Brand,Discount,Ids
-Snacks,cerveza,jkklj,32,50,tern,23,007-a
-Snacks,cerveza,jkklj,32,88,tern,23,007-b
-Snacks,cerveza,jkklj,32,69,tern,23,007-c
-Snacks,cerveza,jkklj,32,69,tern,23,007-d
-Snacks,cerveza,jkklj,32,67,tern,23,007-e
-Snacks,des,def,32,1,brand,0,007-A1N5ho
-Limpieza,des,defin,32,0,brad,32,010-GODOZA
+Snacks,cerveza,jkklj,32,13,tern,23,007-b
+Snacks,cerveza,jkklj,32,63,tern,43,007-c
+Snacks,cerveza,jkklj,73,45,tern,23,007-e
+Snacks,des,def,32,0,brand,0,007-A1N5ho
+Limpieza,clean,bromm,32,3,brend,23,010-b4qVgv

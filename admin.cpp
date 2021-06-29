@@ -3,6 +3,17 @@
 #include <fstream>
 #include <vector>
 
+Admin::Admin(std::vector<std::vector<std::string>> data)
+{
+    setNames(data[0][0]);
+    setSurnames(data[0][1]);
+    setAge(std::stoi(data[0][2]));
+    setPhoneNumber(data[0][3]);
+    setUsername(data[0][4]);
+    setPassword(data[0][5]);
+    setId(data[0][6]);
+}
+
 void Admin::addProducts()
 {
     std::ofstream products;
@@ -14,6 +25,7 @@ void Admin::addProducts()
     std::vector<std::string> list = getDataCol("products.csv", 2, 8);
     if(products.good())
     {
+        fflush(stdin);
         products << "\n";
         std::cout << "Category: ";
         std::getline(std::cin, category);
@@ -45,8 +57,8 @@ void Admin::addProducts()
         products << stock << ",";
         std::cout << std::endl;
 
+        fflush(stdin);
         std::cout << "Brand: ";
-        std::getline(std::cin, brand);
         std::getline(std::cin, brand);
         products << brand << ",";
         std::cout << std::endl;

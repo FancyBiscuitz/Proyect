@@ -13,84 +13,129 @@
 #include "client.h"
 #include "purchase.h"
 #include "bill.h"
+#include "system.h"
 
 using namespace std;
 
 int main(void)
 {
-   /*
-    while (!logged)
-    {
-        1. register
-        2. login
-        3. exit
-    }
-    string role = verificar si es admin o client
-    instanciar usuario
-    if (role == client)
-    {
-        cargar carrito de compras 
-    }
+    System sys;
+    Client current_user;
+    Admin current_admin;
+    std::string mode;
+    std::string sup_id;
+    std::string option;
+    bool lock1, lock2 = true;
+
     while (true)
     {
-        int choice = menu principal(admin o client):
-        switch (role)
+        sup_id = sys.loginMenu();
+        std::vector<std::vector<std::string>> credentials = getData(sup_id, 6, "users.csv", 7);
+        
+        if (getInitials(sup_id, 3) == "usr")
         {
-            case client
-            {
-            do
-            {
-                switch
-                {
-                    ver productos 
-                    filtrar productos 
-                    anadir productos a carrito
-                    eliminar productos de carrito
-                    ver carrito 
-                    comprar
-                    regresar
-                    cerrar sesion
-                }
-            } while (choice is invalid)
-            }
-            
-            case admin
-            {
-                do 
-                {
-                    switch
-                    {
-                        añadir productos
-                        eliminar productos
-                        cambiar precio
-                        cambiar stock
-                        cambiar descuento
-                        regresar
-                        cerrar sesion  
-                    }
-                }while (choice is invalid)
-            }
-            
+            current_user = Client(credentials);
+            mode = "client";
         }
-    }
-   */
-    Client cliente;
-    cliente.setId("testid");
-    std::vector<Purchase> billData;
-    cliente.addProductsToShoppingCart();
-    
-    for (int i = 0; i < cliente.getShoppingCart().size(); i++)
-    {
-        Purchase compra(cliente.getShoppingCart()[i], cliente.getQuantity()[i], cliente.getId());
-        billData.push_back(compra);
-    }
-    for (int j = 0; j < cliente.getShoppingCart().size(); j++)
-    {
-        std::cout << cliente.getShoppingCart()[j].getId() << std::endl;
-    }
-    Bill factura(billData);
-    if (factura.validateBill(cliente))
-    {
-        factura.processBill(cliente);
+        else
+        {
+            current_admin = Admin(credentials);
+            mode = "admin";
+        }
+        while (lock1)
+        {
+            std::cout << "check" << std::endl;
+            option = sys.mainMenu(mode);
+            if (option == "logout")
+            {
+                if (mode == "client")
+                {
+                    current_user.saveShopCart();
+                }
+                break;
+                current_user.~Client();
+                current_admin.~Admin();
+            }
+            option = sys.processMainMenuOption(mode ,option);
+            switch(std::stoi(option))
+            {
+            case 1:
+                {
+                    std::string choice;
+                    do
+                    {
+                        sys.browseProducts();
+                        std::cout << std::endl << "[1]Keep browsing  [2]Return" << std::endl;
+                        std::cout << ">> ";
+                        std::cin >> choice;
+                        choice = checkValidOption(choice, 2, "2");
+                    } while (choice == "1");
+                    break;
+                }
+            case 2:
+                current_user.viewShoppingCartProducts();            
+                break;
+            case 3:
+                sys.buyProductsInCart(current_user);
+                break;
+            case 4:
+                current_admin.addProducts();
+                break;
+            case 5:
+                {
+                    std::string id;
+                    bool check;
+                    showData(getData("products.csv", 8), "products");
+                    std::cout << std::endl << "Insert the id of the product to be deleted" << std::endl;
+                    std::cout << ">> ";
+                    std::cin >> id;
+                    check = current_admin.deleteProducts(id);
+                    if (!check)
+                    {
+                        std::cout << "Id not found" << std::endl;
+                    }
+                }
+                break;
+            case 6:
+                {
+                    std::string id;
+                    float nvalue;
+                    showData(getData("products.csv", 8), "products");
+                    std::cout << "Insert the id of the product of which you want to chage the price" << std::endl;
+                    std::cout << ">> ";
+                    std::cin >> id;
+                    std::cout << std::endl << "New price: ";
+                    std::cin >> nvalue;
+                    current_admin.changePrice(id, nvalue);
+                    break;
+                }
+            case 7:
+                {
+                    std::string id;
+                    int nstock;
+                    showData(getData("products.csv", 8), "products");
+                    std::cout << "Insert the id of the product of which you want to chage the stock" << std::endl;
+                    std::cout << ">> ";
+                    std::cin >> id;
+                    std::cout << std::endl << "New stock: ";
+                    std::cin >> nstock;
+                    current_admin.changeStock(id,nstock);
+                    break;
+                }
+            case 8:
+                {
+                    std::string id;
+                    int ndiscount;
+                    showData(getData("products.csv", 8), "products");
+                    std::cout << "Insert the id of the product of which you want to chage the discount" << std::endl;
+                    std::cout << ">> ";
+                    std::cin >> id;
+                    std::cout << std::endl << "New discount: ";
+                    std::cin >> ndiscount;
+                    current_admin.changeDiscount(id, ndiscount);
+                    break;
+                }
+            }                                
+        }
     }
 }
