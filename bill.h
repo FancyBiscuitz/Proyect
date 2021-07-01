@@ -13,7 +13,7 @@ class Bill
 {
 private:
     std::vector<Purchase> contents;
-    float total = 0;
+    float total;
 public:
     Bill(std::vector<Purchase> _contents);
 
@@ -23,6 +23,7 @@ public:
     void addPurchasesToRecord();
     std::vector<std::vector<std::string>> makeBill();
     void addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile);
+    float getTotal();
 };
 
 #endif
