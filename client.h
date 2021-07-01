@@ -13,7 +13,7 @@ class Client: public User
 
     std::vector<Item> shoppingCart;
     std::vector<int> quantity;
-    float credit = 100000.0;
+    float credit;
  
     public:
 
@@ -38,6 +38,8 @@ class Client: public User
     void loadShopCart();
 
     void saveShopCart();
+
+    void setCredit(float _newCredit);
 
 };
 #endif

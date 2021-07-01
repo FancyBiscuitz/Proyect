@@ -106,13 +106,14 @@ void System::printMenu(std::string mode)
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                        Please select an option.                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|   [1]Browse products    [2]Add products to cart    [3]Show cart     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|       [4]Buy products in cart     [5]Delete products from cart      |" << "\n";
+        std::cout <<"|   [4]Buy products in cart     [5]Delete products from cart          |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                  [6]Log out                 [7]Close                |" << "\n";
+        std::cout <<"|                                                                     |" << "\n";
+        std::cout <<"|   [6]Add funds           [7]Log out            [8]Close             |" << "\n";
+        std::cout <<"|                                                                     |" << "\n";
         std::cout << " ---------------------------------------------------------------------" << "\n";
     }
     if (mode == "admin")
@@ -127,6 +128,7 @@ void System::printMenu(std::string mode)
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|   [4]Change price        [5]Change stock        [6]Change discount  |" << "\n";
+        std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
         std::cout <<"|   [7]View purchases      [8]Log out             [9]Close            |" << "\n";
         std::cout <<"|                                                                     |" << "\n";
@@ -219,10 +221,10 @@ std::string System::mainMenu(std::string mode)
         switch (std::stoi(option))
         {
 
-        case 6:
+        case 7:
             return "logout";
             break;
-        case 7:
+        case 8:
             exit(1);
             break;
         
@@ -273,6 +275,9 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
         case 5:
             return option;
             break;
+        case 6:
+            return option;
+            break;
         default:
             break;
         }
@@ -282,22 +287,22 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
         switch (std::stoi(option))
         {
         case 2:
-            return "6";
-            break;
-        case 3:
             return "7";
             break;
-        case 4:
+        case 3:
             return "8";
             break;
-        case 5:
+        case 4:
             return "9";
             break;
-        case 6:
+        case 5:
             return "10";
             break;
-        case 7:
+        case 6:
             return "11";
+            break;
+        case 7:
+            return "12";
             break;
         default:
             break;
@@ -340,19 +345,25 @@ void System::browseProducts()
             std::cout << "Id: ";
             std::getline(std::cin, choice);
             showData(getData(choice,7,"products.csv",8), "products");
+            break;
         case 5:
             showData(getData("products.csv",8), "products");
             break;
     }
 }
 
-bool System::buyProductsInCart(Client cliente)
+bool System::buyProductsInCart(Client &cliente)
 {
     std::vector<Purchase> content;
     for (int i = 0; i < cliente.getShoppingCart().size(); i++)
     {
         Purchase compra(cliente.getShoppingCart()[i], cliente.getQuantity()[i], cliente.getId());
         content.push_back(compra);
+    }
+    if (content.size() == 0)
+    {
+        std::cout << "No items in shopping cart." << std::endl;
+        return false;
     }
     Bill check(content);
     if (!check.validateBill(cliente))
@@ -361,5 +372,6 @@ bool System::buyProductsInCart(Client cliente)
         return false;
     }
     check.processBill(cliente);
+    cliente.setCredit(cliente.getCredit() - check.getTotal());
     return true;
 }

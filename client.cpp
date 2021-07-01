@@ -11,30 +11,13 @@ Client::Client(std::vector<std::vector<std::string>> data)
     setUsername(data[0][4]);
     setPassword(data[0][5]);
     setId(data[0][6]);
+    credit = 1000.0;
 }
 
 Client::Client()
 {
     
 }
-
-/*
-Client::~Client()
-{
-    for (int i = 0; i < quantity.size(); i++)
-    {
-        delete &shoppingCart[i];
-        delete &quantity[i];
-    }
-    delete &credit;
-    delete &getNames();
-    delete &getSurnames();
-    delete &getAge();
-    delete &getPhoneNumber();
-    delete &getUsername();
-    delete &getPassword();
-    delete &getId();
-}*/
 
 void Client::addProductsToShoppingCart()
 {
@@ -193,4 +176,9 @@ void Client::saveShopCart()
         newh << shoppingCart[i].getId() << "," << quantity[i] << "\n";
     }
     newh.close();
+}
+
+void Client::setCredit(float _newCredit)
+{
+    credit = _newCredit;
 }

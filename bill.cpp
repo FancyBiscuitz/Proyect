@@ -164,3 +164,8 @@ void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::
     }
     history.close();
 }
+
+float Bill::getTotal()
+{
+    return total;
+}

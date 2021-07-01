@@ -84,6 +84,7 @@ int main(void)
             case 4:
                 sys.buyProductsInCart(current_user);
                 current_user.emptyShoppingCart();
+                std::cout << current_user.getCredit();
                 std::cout << std::endl;
                 system("PAUSE");
                 break;
@@ -93,9 +94,20 @@ int main(void)
                 current_user.deleteProducsFromShoppingCart();
                 break;
             case 6:
-                current_admin.addProducts();
+                {
+                    float add;
+                    std::cout << "How much money do you want to add ?" << std::endl;
+                    std::cout << ">> ";
+                    std::cin >> add;
+                    current_user.setCredit(current_user.getCredit() + add);
+                    std::cout << "Funds added.";
+                    system("PAUSE");
+                }
                 break;
             case 7:
+                current_admin.addProducts();
+                break;
+            case 8:
                 {
                     std::string id;
                     bool check;
@@ -111,7 +123,7 @@ int main(void)
                     system("PAUSE");
                 }
                 break;
-            case 8:
+            case 9:
                 {
                     std::string id;
                     float nvalue;
@@ -125,7 +137,7 @@ int main(void)
                     system("PAUSE");
                     break;
                 }
-            case 9:
+            case 10:
                 {
                     std::string id;
                     int nstock;
@@ -139,7 +151,7 @@ int main(void)
                     system("PAUSE");
                     break;
                 }
-            case 10:
+            case 11:
                 {
                     std::string id;
                     int ndiscount;
@@ -153,7 +165,7 @@ int main(void)
                     system("PAUSE");
                     break;
                 }
-            case 11:
+            case 12:
                 showData(getData("users.csv", 7), "users");
                 std::cout << endl;
                 system("CLS");

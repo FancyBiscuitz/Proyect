@@ -20,7 +20,7 @@ class System
     std::string mainMenu(std::string mode);
     std::string processMainMenuOption(std::string mode, std::string option);
     void browseProducts();
-    bool buyProductsInCart(Client cliente);
+    bool buyProductsInCart(Client &cliente);
 };
 
 #endif

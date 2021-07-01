@@ -1,7 +1,548 @@
-Snacks,cerveza,jkklj,13,45,tern,23,007-b
-Snacks,cerveza,jkklj,23,52,tern,23,007-c
-Snacks,cerveza,jkklj,32,69,tern,43,007-d
-Snacks,cerveza,jkklj,32,34,tern,43,007-e
-Snacks,cerveza,jkklj,30.830000,24,tern,43,007-h
-Limpieza,clean,def,55,44,marca,65,010-RUTQRw
-Limpieza,descript,fenit,32,68,genau,50,010-4sq9Sf
+Abarrotes,Aceites,Vegetal,9.8,50,Primor,0,001-h3Klzs
+Abarrotes,Aceites,Vegetal,6.79,50,Nicolini,0,001-r2ZlmP
+Abarrotes,Aceites,Oliva Extra virgen,38.9,50,Carbonell,0,001-e3KzG1
+Abarrotes,Aceites,Oliva,27.9,50,El Olivar,0,001-x2kcLp
+Abarrotes,Aceites,Ajonjoli,6.59,50,Sesamel,0,001-f3xk1p
+Abarrotes,Aceites,Ajonjoli,27.5,50,Olivos del Sur,0,001-qP3xj1
+Abarrotes,Arroz,Extra,16.7,50,Pepega,5,001-d3p1LZ
+Abarrotes,Arroz,Extra,19.89,50,Costeño,0,001-x1ldP3
+Abarrotes,Arroz,Superior,17,50,Paisana,0,001-w1gP3v
+Abarrotes,Arroz,Superior,18.89,50,Costeño,0,001-g3pZ21
+Abarrotes,Arroz,Integral,19.2,50,Pepega,10,001-f1Xp3z
+Abarrotes,Arroz,Extra,19.89,50,Vallenorte,0,001-r3xK1L
+Abarrotes,Arroz,Extra Graneadito,18.5,50,Pepega,0,001-e2LpX1
+Abarrotes,Arroz,Extra,19.19,50,Faraon,0,001-t1kL4p
+Abarrotes,Arroz,Extra,15.79,50,Precio Uno,10,001-r1cKh2
+Abarrotes,Pastas y Salsas,S. Tomate Parmesano,7.5,50,Pepega-Premium,5,001-z1df2p
+Abarrotes,Pastas y Salsas,S. Tomate Arrabiatta,7.5,50,Pepega-Premium,5,001-x2dp1v
+Abarrotes,Pastas y Salsas,Macaroni & Cheese,4.6,50,Pepega,5,001-d2p1cF
+Abarrotes,Pastas y Salsas,Pasta Spaguetti,3.6,50,Pepega,5,001-d7kXgp
+Abarrotes,Pastas y Salsas,S. BBQ Original,8.2,50,Pepega,5,001-v2KxP9
+Abarrotes,Pastas y Salsas,Pasta Canuto Rayado,1.2,30,Pepega,0,001-y2cP5m
+Abarrotes,Pastas y Salsas,Fideo Spaghetti,3.9,50,Don-Vittorio,0,001-y4juN5
+Abarrotes,Pastas y Salsas,Fideo Spaghetti,2.69,50,Nicolini,0,001-f2ck5P
+Abarrotes,Pastas y Salsas,S. Roja,4,50,Don-Vittorio,0,001-d6jTN2
+Abarrotes,Pastas y Salsas,Fideo Spaghetti,4,50,Molitalia,0,001-j3Ck5p
+Abarrotes,Pastas y Salsas,S. Tomate Pomarola,1.3,50,Molitalia,0,001-gu4cF7
+Abarrotes,Pastas y Salsas,Fideo Cabello Angel,1.5,50,Don-Vittorio,0,001-k6cBn4
+Abarrotes,Pastas y Salsas,Fideo Linguini Grosso,3.9,50,Don-Vittorio,0,001-m4Kp2Z
+Abarrotes,Pastas y Salsas,P.Tomate,1.3,50,Molitalia,0,001-b6cX4T
+Abarrotes,Pastas y Salsas,Fideo Tornillo,1.59,50,Don-Vittorio,0,001-n2KcJ9
+Abarrotes,Pastas y Salsas,Fideo Tornillo,1.29,50,Molitalia,0,001-uG2rK7
+Abarrotes,Pastas y Salsas,Semola,1.29,50,Molitalia,0,001-m2CrT5
+Abarrotes,Pastas y Salsas,Fideo Codo Rayado,1.29,50,Molitalia,0,001-y2CkPZ
+Abarrotes,Pastas y Salsas,Tallarin Grueso,2.69,50,Nicolini,0,001-j2CxZ5
+Abarrotes,Pastas y Salsas,Fideo Cabello de Angel,1.29,50,Molitalia,0,001-k2Clp4
+Abarrotes,Pastas y Salsas,Fideos Tornillo,1.09,50,Nicolini,0,001-a2LVm8
+Abarrotes,Pastas y Salsas,S. Roja Peruana,7.6,50,Casa-Verde,0,001-s2VCm3
+Abarrotes,Pastas y Salsas,Tuco,1.1,50,Sibarita,0,001-d2cN5K
+Abarrotes,Pastas y Salsas,Fideo Tallarin Delgado,1.99,50,Nicolini,0,001-b3KaP5
+Abarrotes,Pastas y Salsas,Fideo Municion,1.3,50,Molitalia,0,001-v4kg5T
+Abarrotes,Pastas y Salsas,Fideo Rigatoni,1.09,50,Nicolini,0,001-h5Vp2L
+Abarrotes,Pastas y Salsas,Fideo Corto Letras,1.29,50,Molitalia,0,001-n2Pvk5
+Abarrotes,Pastas y Salsas,Fideo Canuto Multicereal,1.1,50,Grano de Oro,0,001-u3xMa4
+Abarrotes,Pastas y Salsas,Pure Tomate la Rojita,1.4,50,Maggi,0,001-k5VmP4
+Abarrotes,Pastas y Salsas,Ravioli Carne,5.9,50,Molitalia,0,001-a2vMrP
+Abarrotes,Pastas y Salsas,Lasagne,25.9,30,Agnesi,0,001-r3cPk4
+Abarrotes,Alimentos en Conserva,Durazno en Mitades,6.2,50,Pepega,5,001-hGn2eL
+Abarrotes,Alimentos en Conserva,Atún en Aceite X3,11.6,50,Pepega,5,001-p4CmB5
+Abarrotes,Alimentos en Conserva,Trozos de Atún,4.1,50,Pepega,5,001-n3vJ2K
+Abarrotes,Alimentos en Conserva,Esparrago Blanco,6.5,50,Pepega,5,001-r3gJ6T
+Abarrotes,Alimentos en Conserva,Trozos de atún,4.69,50,Campomar,0,001-y8VnM9
+Abarrotes,Alimentos en Conserva,Filete de Atún,5.19,50,Campomar,0,001-q6bM4W
+Abarrotes,Alimentos en Conserva,Duraznos en Almibar,8.7,50,Aconcagua,0,001-w3hQ5n
+Abarrotes,Alimentos en Conserva,Filete de Atún Light,5.49,50,Real,0,001-rBk4P2
+Abarrotes,Alimentos en Conserva,Grated de Atún,3.9,50,Florida,0,001-jBm5P8
+Abarrotes,Alimentos en Conserva,Lomito de Atún,4.99,50,Campomar,0,001-hKBm3A
+Abarrotes,Alimentos en Conserva,Choclo Dulce Desgranado,6.4,50,Valle Fertil,0,001-d8Ka2C
+Abarrotes,Alimentos en Conserva,Conserva Piña Rodajas,6,50,Pepega,0,001-m3CaR6
+Abarrotes,Alimentos en Conserva,Champignones,5.6,50,Narcissus,0,001-r9VmS3
+Abarrotes,Alimentos en Conserva,Sardinas en Aceite,14.89,50,Vigilante,0,001-w4bKa9
+Abarrotes,Alimentos en Conserva,Cocktail de Frutas,9.2,50,Pepega,5,001-w2vBJ6
+Abarrotes,Alimentos en Conserva,Trozos de Atún X6,22.5,50,Pepega,10,001-q6BaU5
+Abarrotes,Menestras,Lenteja Bebe,2.4,50,Precio-Uno,0,001-e3bZkP
+Abarrotes,Menestras,Quinua,6.4,50,Pepega,5,001-p2BmQ6
+Abarrotes,Menestras,Lenteja,3.3,50,Pepega,5,001-vMxAp2
+Abarrotes,Menestras,Maiz Pop Corn,3.1,50,Pepega,5,001-g2cZp5
+Abarrotes,Menestras,Frijol Canario,6.1,50,Pepega,5,001-x5mV7Q
+Abarrotes,Menestras,Arveja Partida,2.9,50,Pepega,5,001-t3qR5X
+Abarrotes,Menestras,Quinua,8.39,50,Pepega,5,001-w2Zp5M
+Abarrotes,Menestras,Maiz Pop Corn,3.19,50,Costeno,0,001-t4RkP5
+Abarrotes,Menestras,Garbanzos,3.5,50,Pepega,0,001-T2vMaQ
+Abarrotes,Menestras,Trigo Mote,3.2,50,Pepega,0,001-Bn4s9A
+Abarrotes,Menestras,Frijol Red Kidney,5.5,50,Pepega,0,001-Zw5la1
+Abarrotes,Menestras,Papa Seca,3.9,50,Pepega,0,001-iM4a2P
+Abarrotes,Menestras,Pallar,7.99,50,Costeño,0,001-q2bXzR
+Abarrotes,Menestras,Quinua,9.4,50,Tesoro del Campo,0,001-r9Cxz4
+Abarrotes,Menestras,Frijol Negro,7.29,50,Costeño,0,001-t9bXz4
+Abarrotes,Menestras,Trigo Mote,7.59,50,Costeño,0,001-eCb4q2
+Abarrotes,Menestras,Lentejon,3.3,50,Pepega,0,001-w5Za9E
+Abarrotes,Peru Sopas y Bases,Pure de Papa,3,50,Pepega,0,001-w9xZk3
+Abarrotes,Peru Sopas y Bases,Crema de Esparragos,2,50,Pepega,0,001-z2cxP4
+Abarrotes,Peru Sopas y Bases,Crema de Choclo,2.6,50,Pepega,0,001-z2vK9X
+Abarrotes,Peru Sopas y Bases,Pure de Papa,3.9,50,Knorr,0,001-q9vMn3
+Abarrotes,Peru Sopas y Bases,Sopa Instantánea Gallina,1.3,50,Knorr,0,001-w5VmZp
+Abarrotes,Peru Sopas y Bases,Sopa Instantánea Pollo,1.3,40,Knorr,0,001-tb4X8z
+Abarrotes,Peru Sopas y Bases,Cubo Concentrado Caldo de Gallina,2.2,50,Maggi,0,001-s5bMap
+Abarrotes,Peru Sopas y Bases,Caldo Concentrado de Gallina en Polvo,1.2,50,Ajinomoto,0,001-s3gv2Q
+Abarrotes,Peru Sopas y Bases,Sopa Instantánea de Carne,1.3,50,Ajinomen,0,001-r4vZlp
+Abarrotes,Peru Sopas y Bases,Cubo Concentrado Caldo de Carne,2.2,50,Maggi,0,001-y7vMzp
+Abarrotes,Peru Sopas y Bases,Crema de Esparragos,2.7,50,Maggi,0,001-w5gJk1
+Abarrotes,Peru Sopas y Bases,Crema de Hongos,2.7,50,Maggi,0,001-r3bzK2
+Abarrotes,Peru Sopas y Bases,Pure de Papas,3.4,50,Nicolini,0,001-l5bZo4
+Abarrotes,Peru Sopas y Bases,Sopa Instantánea de Gallina Criolla,1.3,50,Ajinomen,0,001-u2bZm1
+Abarrotes,Peru Sopas y Bases,Sopa de Pollo con Fideo,2.3,50,Maggi,0,001-h2xZkp
+Abarrotes,Peru Sopas y Bases,Sopa Instantánea de Gallina Picante,1.3,50,Ajinomen,0,001-y6vZM1
+Abarrotes,Peru Sopas y Bases,Sopa de Pollo,2.3,50,Maggi,0,001-rzA4k2
+Abarrotes,Peru Sopas y Bases,Base para CauCau,6.4,50,Provenzal,0,001-dZ2gJ4
+Abarrotes,Peru Sopas y Bases,Base para Ocopa,7.1,50,Provenzal,0,001-hZc5V1
+Abarrotes,Peru Sopas y Bases,Crema de Alcachofa,2.6,50,Pepega,5,001-p5bZC3
+Abarrotes,Harinas,H. Preparada,6.9,50,Blanca Flor,0,001-w2bXz4
+Abarrotes,Harinas,H. de Trigo sin Preparar,6.7,50,Blanca Flor,0,001-yZ8vM2
+Abarrotes,Harinas,H. Preparada,6.29,50,Molitalia,0,001-iVm2zL
+Abarrotes,Harinas,H. de 7 semillas,8.99,50,Naturandes,0,001-Ic4nz1
+Abarrotes,Harinas,H. de Coco,8.4,50,Mi Tierra,0,001-vZm2g1
+Abarrotes,Harinas,H. de Maiz Blanco,7.9,50,Pepega,0,001-x2tZp6
+Abarrotes,Harinas,H. de Maca,14.19,50,Govinda,0,001-y3xZl4
+Abarrotes,Harinas,H. de Quinua,10.99,50,Molicusco,0,001-r3bZlp
+Abarrotes,Harinas,H. de Ajonjoli,6.59,50,Gatti,0,001-vb5Zl1
+Abarrotes,Harinas,H. de Chia,6.59,50,Gatti,0,001-gAXz4l
+Abarrotes,Harinas,H. de Camote,13.79,50,El Artesano,0,001-a3bZl5
+Abarrotes,Harinas,H. de Maca Negra,25.5,50,Nuestra Salud,0,001-s3j7pk
+Abarrotes,Harinas,H. de Platano,8.89,50,El Artesano,0,001-axK6q3
+Abarrotes,Harinas,H. de Maca Amarilla,16.59,50,Nuestra Salud,0,001-s6vL4p
+Abarrotes,Harinas,H. de Quinua,24.5,50,Renacer,0,001-y6a7Lp
+Abarrotes,Harinas,H. de Maca y Lucuma,17.49,50,Nuestra Salud,0,001-e7Zlp5
+Abarrotes,Harinas,H. Pre Tostada,11.29,50,Renacer,0,001-hNa6o3
+Abarrotes,Condimentos,Ajos Molidos,4.5,50,Pepega,5,001-pk3Zm6
+Abarrotes,Condimentos,Pasta de Aji Panca,4,50,Pepega,5,001-iZv5b2
+Abarrotes,Condimentos,Mayonesa,6.5,50,Pepega,5,001-hZ3bM9
+Abarrotes,Condimentos,Mostaza Dijon,8.5,50,Pepega,15,001-z2bk6p
+Abarrotes,Condimentos,Pasta de Aji Amarillo,3.6,50,Pepega,5,001-q2zKp5
+Abarrotes,Condimentos,Aji Criollo,7.7,50,Pepega,5,001-kz2Bm5
+Abarrotes,Condimentos,Salsa Sillao,3,50,Pepega,5,001-xMsf2k
+Abarrotes,Condimentos,Vinagra de Manzana,9.2,50,Pepega,5,001-t7Xms4
+Abarrotes,Condimentos,Ketchup Americano,5.5,50,Pepega,5,001-bMz2t6
+Abarrotes,Condimentos,Culantro Molido,4,50,Pepega,5,001-Bm7a2l
+Abarrotes,Condimentos,Vinagre Balsámico,6.25,50,Pepega,5,001-Cx3k1l
+Abarrotes,Condimentos,Vinagre Vino Blanco,3.1,50,Pepega,5,001-y1jKs7
+Abarrotes,Condimentos,Mayonesa,15.1,50,AlaCena,0,001-A5vZl3
+Abarrotes,Condimentos,Ketchup,15.9,50,AlaCena,0,001-k5zs2p
+Abarrotes,Condimentos,Sillao,3.6,50,Kikko,0,001-s9zN31
+Abarrotes,Condimentos,Mayonesa Light,9.6,50,AlaCena,0,001-e3z2lp
+Abarrotes,Condimentos,Mostaza,3,50,Libbys,0,001-r7Sk3p
+Abarrotes,Condimentos,Ajo Molido,8.3,50,Piki,0,001-y5lPa2
+Abarrotes,Condimentos,Crema Huancaina,8.8,50,AlaCena,0,001-qP3gZ2
+Abarrotes,Condimentos,Crema Aji Tari,9.8,50,AlaCena,0,001-xZ3gp1
+Abarrotes,Condimentos,Aji Especial Panquita,6.3,50,Sibarita,0,001-s6zK3a
+Abarrotes,Condimentos,Salsa de Rocoto Uchucuta,9.5,50,AlaCena,0,001-a7rP4c
+Abarrotes,Condimentos,Vinagre Tinto,4.3,50,Venturo,0,001-k3zMa2
+Abarrotes,Especias,Pimienta Negra Molida,2.5,50,Pepega,5,001-v3zAlp
+Abarrotes,Especias,Sal de Marasfina,9.9,50,Pepega,5,001-k5a2PY
+Abarrotes,Especias,Comino Molido,2.5,50,Pepega,5,001-l5zMV3
+Abarrotes,Especias,Clavo de Olor Entero,2.9,50,Pepega,5,001-b2Zp5k
+Abarrotes,Especias,Canela Molida,2.5,50,Pepega,5,001-pXc1q5
+Abarrotes,Especias,Canela Entera,2.1,50,Pepega,5,001-g6zK2a
+Abarrotes,Especias,Sal de Mesa,1.3,50,Pepega,5,001-k5Cm3p
+Abarrotes,Especias,Oregano Entero,1.4,50,Pepega,5,001-xZ2bKP
+Abarrotes,Especias,Sal de Maras Gruesa,9.9,50,Pepega,5,001-w6Zj3p
+Abarrotes,Especias,Sal de Mar de Mesa,1.9,50,Marina,0,001-dy5j3k
+Abarrotes,Especias,Sal de Mar para Cocina,1.9,50,Marina,0,001-l1AvmF
+Abarrotes,Especias,Canela Entera,3.2,50,Sibarita,0,001-wQf5j7
+Abarrotes,Especias,Oregano Entero,3.3,50,Karino,0,001-vZm3p6
+Abarrotes,Especias,Sazonador,4.1,50,Ajinomoto,0,001-y9fJ3n
+Abarrotes,Especias,Oregano,1.7,50,Sibarita,0,001-gBm3s7
+Desayuno,Azucar,Azucar Rubia,12.9,50,Pepega,5,002-xM2k1L
+Desayuno,Azucar,Azucar Rubia Dulfina 5kg,14.9,50,Dulfina,0,002-zKf3p1
+Desayuno,Azucar,Azucar Rubia,16.5,50,Cartavio,0,002-u5zBa2
+Desayuno,Azucar,Azucar Blanca,14.9,50,Pepega,5,002-r2Zm4A
+Desayuno,Azucar,Panela,8.3,50,Pepega,5,002-tr9nZ2
+Desayuno,Azucar,Endulzante,72,50,Splenda,0,002-bWr4l1
+Desayuno,Azucar,Edulcorante,40,50,Splenda,0,002-c2Tqk7
+Desayuno,Azucar,Endulzante Stevia Polvo,30.9,50,Pepega,5,002-z6kx1p
+Desayuno,Azucar,Endulzante Liquido,25.9,50,Nutrastevia,0,002-e2Wkz7
+Desayuno,Azucar,Endulzante Natural,29.9,50,Vida Stevia,0,002-q6Zk3p
+Desayuno,Cafe,Café Instantáneo Polvo,14.5,50,Pepega,5,002-t3zAk4
+Desayuno,Cafe,Café Instantáneo Descafeinado,17.9,50,Pepega,5,002-a6Xz8s
+Desayuno,Cafe,Café Instantáneo,15.9,50,Pepega,5,002-e6iRq2
+Desayuno,Cafe,Café Molido Tostado Clásico,14.49,50,Altomayo,0,002-c7K1ql
+Desayuno,Cafe,Café Peruano Tostado y Molido,15.89,50,Cafetal,0,002-r6zAk9
+Desayuno,Cafe,Cebada Instantánea Ecco,9.69,50,Ecco,0,002-tY2zAk
+Desayuno,Cafe,Café Kirma,14.9,50,Kirma,0,002-y7AzKp
+Desayuno,Cafe,Café Fina Selección,24.9,50,Nescafé,0,002-u3ZaK5
+Desayuno,Cafe,Café Nescafé Tradicion,16,50,Nescafé,0,002-a2k9pL
+Desayuno,Cafe,Café Firma Lata 190g,18.9,50,Nescafé,0,002-rK2Nz9
+Desayuno,Cafe,Café Golden Selection Moderado,19.9,50,Nescafé,0,002-rb9sk2
+Desayuno,Cafe,Café Instantáneo Gold Blend,37.9,50,Nescafé,0,002-h4zA6q
+Desayuno,Cafe,Café Descafeinado Liofilizado,23.5,50,Altomayo,0,002-zQ9k2C
+Desayuno,Cereales,Granola con Frutos del Bosque,9.9,50,Pepega,5,002-vK3p5z
+Desayuno,Cereales,Hojuelas de Avena Integral,7.9,50,Pepega,5,002-b5aZm7
+Desayuno,Cereales,Granola con Trozos de Chocolate,9.9,50,Pepega,5,002-wKj5a3
+Desayuno,Cereales,Granola con Pasas y Almendras,9.9,50,Pepega,5,002-cXa4p7
+Desayuno,Cereales,Avena Tradicional Original,12.5,50,Quaker,5,002-zC2m9p
+Desayuno,Cereales,Avena Premium,9.9,50,3 Ositos,0,002-wZ4kq1
+Desayuno,Cereales,Corn Flakes,12.4,50,Kelloggs,0,002-r5zAk9
+Desayuno,Cereales,Cereal de Maiz Gluten Free,13.9,50,Corn Flakes,0,002-eG3zM1
+Desayuno,Cereales,Quinua Avena,2.7,50,3 Ositos,0,002-t6aOq3
+Desayuno,Cereales,Cereales Andinos Avena,2.7,50,3 Ositos,0,002-qCz9A3
+Desayuno,Cereales,Cereal Multigrano,9.9,50,Angel,0,002-s1AzX3
+Desayuno,Cereales,Cereal Integral,17.3,50,Chocapic,0,002-I3kCw6
+Desayuno,Cereales,Granola Con Miel de Abeja,15.9,50,Union,0,002-iAf3p2
+Desayuno,Cereales,Cereal Cap Crunch Original,26.9,50,Quaker,0,002-zAk2L6
+Desayuno,Cereales,Cereal Flakes Hojuelas de Maíz,16.5,50,Angel,0,002-u8zXj1
+Desayuno,Cereales,Cereal con Hojuelas de Maíz Azucarada,21.7,50,Angel,0,002-C9wA3l
+Desayuno,Cereales,Cereal Copix de Chocolate,12.9,50,Angel,0,002-coA24x
+Desayuno,Cereales,Cereal Fitness Original,17.9,50,Fitness,0,002-k4Azp2
+Desayuno,Cereales,Avena Canela y Clavo Premium,3.6,50,3 Ositos,0,002-z2rw6j
+Desayuno,Cereales,Cereal de Chocolate 420g,12.9,50,Angel,0,002-mA5kx1
+Desayuno,Cereales,Cereal Milo 320g,10.6,50,Milo,0,002-y5x9a3
+Desayuno,Cereales,Cereal Meli 840g,21.7,50,Angel,0,002-I6az2l
+Desayuno,Mermelada y Mieles,Mermelada de Fresa 1kg,9.9,50,Pepega,5,002-t9aDT2
+Desayuno,Mermelada y Mieles,Miel de abeja 600g,21.5,50,Pepega,5,002-dA9zX3
+Desayuno,Mermelada y Mieles,Mermelada de Fresa 320g,4.5,50,Pepega,5,002-l6Zx1p
+Desayuno,Mermelada y Mieles,Mermelada de Fresa 320g,5.9,50,Gloria,0,002-yx9A1d
+Desayuno,Mermelada y Mieles,Mermelada de Fresa Barril 1kg,10.9,50,Gloria,0,002-cZ2m3q
+Desayuno,Mermelada y Mieles,Crema de maní,7.9,50,Pepega,5,002-cD9x1z
+Desayuno,Mermelada y Mieles,Mantequilla de maní 410g,22.5,50,Unión,0,002-rTx4z1
+Desayuno,Mermelada y Mieles,Mermelada de Fresa 800g,8.8,50,Fanny,0,002-yXz1k3
+Desayuno,Mermelada y Mieles,Crema de maní sin azucar 200g,8.5,50,Pepega,5,002-cU1p3n
+Desayuno,Mermelada y Mieles,Miel de mapple 480g,8.99,50,Spitze,0,002-IxO13c
+Desayuno,Mermelada y Mieles,Mermelada de Sauco 240g,5.9,50,Pepega,5,002-tIu3xA
+Desayuno,Mermelada y Mieles,Algarrobina 800g,19.49,50,Spitze,0,002-lA3kZ1
+Desayuno,Mermelada y Mieles,Mermelada Diet Fresa 470g,17.9,50,Dmarco,0,002-eKz3a1
+Desayuno,Mermelada y Mieles,Mermelada de Naranja 310g,4.8,50,Pepega,5,002-d5xZ1a
+Desayuno,Mermelada y Mieles,Mermelada Diet Arandanos 280g,13.9,50,Helios,0,002-g5q2xC
+Desayuno,Mermelada y Mieles,Miel Eucalipto 300g,15.39,50,La Abeja Real,0,002-y9zX3d
+Desayuno,Mermelada y Mieles,Miel de Abeja Orgánica 300g,20.5,50,Wasi Organics,0,002-qEr4xZ
+Desayuno,Mermelada y Mieles,Mermelada de Durazno Light 200g,4.2,50,Dulce Cosecha,0,002-c6xQ1t
+Desayuno,Mermelada y Mieles,Mermelada de Membrillo 200g,4.6,50,Dulce Cosecha,0,002-p7XzK2
+Desayuno,Mermelada y Mieles,Mermelada de Fresa con Chia y Stevia 230g,9.7,50,Kusi,0,002-u7zA1w
+Desayuno,Mermelada y Mieles,Mermelada de Fresa Diet 330g,29.9,50,Crema y Nata,0,002-u9xZ1c
+Desayuno,Mermelada y Mieles,Miel de Abeja 600g,28.9,50,Olivos del Sur,0,002-iXc2k5
+Desayuno,Mermelada y Mieles,Miel de Mapple Orgánica 250ml,58.5,50,Erabl-or,0,002-lK2v6Z
+Desayuno,Panadería Industrial,Paneton 900g,23.9,50,Blanca Flor,0,002-y9xZ0d
+Desayuno,Panadería Industrial,Pan de Molde Integral 600g,9.9,50,Bimbo,0,002-o5nR2L
+Desayuno,Panadería Industrial,Pan de Molde Integral 600g,6.7,50,Pepega,5,002-uR8xZ2
+Desayuno,Panadería Industrial,Pan de Molde Blanco 500g,6.9,50,PYC,0,002-bA7zX3
+Desayuno,Panadería Industrial,Pan para Hamburguesa 8u,5,50,Bimbo,0,002-uJ9xQ1
+Desayuno,Panadería Industrial,Tostadas Clásicas 160g,5,50,Bimbo,0,002-k9Zx2q
+Desayuno,Panadería Industrial,Tostadas Integrales 10u,5,50,Bimbo,0,002-oXc2z8
+Desayuno,Panadería Industrial,Pan Integral Extra Grande 750g,10.5,50,Bimbo,0,002-Kx4qA6
+Desayuno,Panadería Industrial,Pan de Molde Blanco de Semillas 600g,9.9,50,Bimbo,0,002-iXz2q5
+Desayuno,Panadería Industrial,Pan Arabe Blanco 10u,5.9,50,El Cedro,0,002-yCx8q2
+Desayuno,Panadería Industrial,Pan de Molde Blanco sin Corteza 560g,11.5,50,Don Mamino,0,002-vQ3x0D
+Desayuno,Panadería Industrial,Tortilla de Harina de Trigo Integral 12u,8,50,Bimbo,0,002-nP5h1Z
+Desayuno,Panadería Industrial,Pan de Molde Artesano 530g,8.5,50,Bimbo,0,002-uT6xA2
+Desayuno,Panadería Industrial,Pan Multisemillas con Avena 540g,9.9,50,Union,0,002-uT7xQl
+Desayuno,Panadería Industrial,Pan Pita Integral 10u,5.7,50,Pepega,5,002-vT3jC1
+Desayuno,Panadería Industrial,Pan Hot Dog 750g,5,50,Bimbo,0,002-b7yX9o
+Desayuno,Panadería Industrial,Pan de Molde Fibra 540g,11.5,50,Union,0,002-gK4l9C
+Desayuno,Panadería Industrial,Pan Molido 250g,3.6,50,Pepega,5,002-b8Dw2V
+Desayuno,Panadería Industrial,Pan de Molde Integral 500g,6.9,50,Pyc,0,002-t9cHk2
+Desayuno,Panadería Industrial,Tostadas Integrales 150g,5.9,50,Union,0,002-iXk9n1
+Desayuno,Panadería Industrial,Pan de Molde Integral Mediano 360g,6.9,50,Union,0,002-uX7nA2
+Desayuno,Panadería Industrial,Paneton con Pasas y Frutas 900g,22.5,50,Gloria,0,002-pA9c3M
+Desayuno,Panadería Industrial,Palitos con Ajonjolí y Linaza 65g,1.9,50,Union,0,002-xN3cK9
+Desayuno,Panadería Industrial,Paneton Chocoton Donofrio 500g,16.9,50,Donofrio,0,002-r9qJxK
+Desayuno,Panadería Industrial,Keke Familiar Marmoleado 380g,6.9,50,Bimbo,0,002-r8xZ3l
+Desayuno,Panadería Industrial,Keke Famliar de Naranja 380g,6.9,50,Bimbo,0,002-bX6a2L
+Desayuno,Panadería Industrial,Palitos con Oregano 125g,4.3,50,Edith,0,002-qPc2m9
+Desayuno,Panadería Industrial,Paneton 900g,13.9,50,Pyc,0,002-xJ3Au9
+Desayuno,Panadería Industrial,Bimbolete Vainilla 165g,4.9,50,Bimbo,0,002-c2aK1w
+Desayuno,Panadería a Granel,Pan Chancay 400g,4.6,50,Pepega,5,002-Tv9aL3
+Desayuno,Panadería a Granel,Pan Petipan 600g,6.2,50,Pepega,5,002-r5kZp2
+Desayuno,Panadería a Granel,Pan Yema 6u,2.59,50,Pepega,5,002-I3qA9l
+Desayuno,Panadería a Granel,Croissant 2u,3.6,50,Pepega,5,002-Td4aK3
+Desayuno,Panadería a Granel,Croissant Manjar Blanco 2u,5,50,Pepega,5,002-K4sQl3
+Desayuno,Panadería a Granel,Karamanduka 6u,3.49,50,Pepega,5,002-P7xCa2
+Desayuno,Panadería a Granel,Karamanduka Chips 6u,3.89,50,Pepega,5,002-Y9cN1a
+Desayuno,Panadería a Granel,Mini Frances 600g,6.2,50,Pepega,5,002-uX7aq1
+Desayuno,Panadería a Granel,Mini Ciabatta 600g,6.2,50,Pepega,5,002-Qz5Lp9
+Desayuno,Panadería a Granel,Baguette Clásico,1.5,50,Pepega,5,002-Q9xMn4
+Desayuno,Panadería a Granel,Enrollado de Aceituna,2.9,50,Pepega,5,002-cZ9a0W
+Desayuno,Panadería a Granel,Pan Carioca Dulce 6u,2.39,50,Pepega,5,002-B2aZl5
+Desayuno,Panadería a Granel,Pan Mini Baguette sin Gluten 200g,9.9,50,Molinos del Mundo,0,002-rQx8a9
+Desayuno,Panadería a Granel,Baguette Aceituna y Orégano,2.9,50,Pepega,0,002-Rx6z2I
+Lacteos,Huevos,Huevos de Codorniz 24u,6.5,50,Pepega,5,003-Tu2xZ9
+Lacteos,Huevos,Huevos de Codorniz 18u,4.9,50,Pepega,5,003-Ux9a2Q
+Lacteos,Huevos,Huevos Pardos 30u,13.2,50,Pepega,5,003-w5ZaL9
+Lacteos,Huevos,Huevos Pardos 15u,6.6,50,Pepega,5,003-T9hw2Q
+Lacteos,Huevos,Pack Huevos 12u,13.59,50,Gallinas Libres,0,003-FhQ2k9
+Lacteos,Huevos,Huevos Pardos Jumbo 15u,8.5,50,La Calera,0,003-T2eW6x
+Lacteos,Huevos,Huevos Pardos 15u,7.5,50,La Calera,0,003-Tw4kZ9
+Lacteos,Huevos,Huevos Seleccionados 15u,6.9,50,San Fernando,0,003-P3d9Sz
+Lacteos,Huevos,Huevos Blancos 15u,6.6,50,Pepega,5,003-W2zLa3
+Lacteos,Huevos,Huevo Super Jumbo 10u,8.5,50,La Calera,0,003-yR7sA9
+Lacteos,Huevos,Huevos Blancos 30u,13.2,50,Pepega,5,003-Ud2Aj9
+Lacteos,Huevos,Huevos de Corral 12u,7.5,50,Pepega,5,003-W8xAl3
+Lacteos,Huevos,Clara de Huevo 500g,16.49,50,Enkel Foods,0,003-Uh8a3R
+Lacteos,Mantequillas,Mantequilla con Sal 400g,13.79,50,Gloria,0,003-W9xAl2
+Lacteos,Mantequillas,Mantequilla 200g,8.49,50,Gloria,0,003-R3xZa9
+Lacteos,Mantequillas,Mantequilla con Sal 200g,8.89,50,Laive,0,003-YkJ2Z9
+Lacteos,Mantequillas,Mantequilla sin Sal 200g,9.39,50,Gloria,0,003-R9zAl3
+Lacteos,Mantequillas,Mantequilla 200g,10.09,50,Gloria,0,003-Ex9aS2
+Lacteos,Mantequillas,Mantequilla con Sal 200g,13.59,50,President,0,003-e9dAX3
+Lacteos,Yogurt Familiar,Yogurt Griego Natural 1kg,12.9,50,Pepega,5,003-U9sAl4
+Lacteos,Yogurt Familiar,Yogurt Vainilla 1.9kg,8.99,50,Gloria,0,003-Ca5Kq9
+Lacteos,Yogurt Familiar,Yogurt Fresa 1.9kg,8.99,50,Gloria,0,003-Ya8qJ2
+Lacteos,Yogurt Familiar,Yogurt Probiotico Sbelt Fresa 1.8kg,8.99,50,Laive,0,003-Yf5A9l
+Lacteos,Yogurt Familiar,Yogurt Probiotico Fresa 1.8kg,8.59,50,Laive,0,003-Pr9aQ3
+Lacteos,Yogurt Familiar,Yogurt Probiotico Vainilla 1.8kg,8.59,50,Laive,0,003-Wd9a2E
+Lacteos,Yogurt Familiar,Yogurt Griego con Frutos del Bosque 1kg,12.9,50,Pepega,5,003-Er2a9C
+Lacteos,Yogurt Familiar,Yogurt Fresa 1kg,5.4,50,Gloria,0,003-E2vMa9
+Lacteos,Yogurt Familiar,Yogurt Durazno 1.9kg,8.99,50,Gloria,0,003-R9jAz3
+Lacteos,Yogurt Familiar,Yogurt Descremado Vainilla Slim 1.9kg,9.9,50,Gloria,0,003-B4aQk3
+Lacteos,Yogurt Familiar,Yogurt Bebible Natural 1kg,5.4,50,Gloria,0,003-vW8a2Z
+Lacteos,Yogurt Familiar,Yogurt Griego Frutos Rojos 800g,7.39,50,Laive,0,003-Xk4q9I
+Lacteos,Yogurt Familiar,Yogurt Lucuma 1kg,5.4,50,Gloria,0,003-H9z4Ka
+Lacteos,Yogurt Familiar,Yogurt Piña 1kg,5.4,50,Gloria,0,003-C8eQ3j
+Lacteos,Yogurt Familiar,Yogurt Probiotico Mora 1kg,5.79,50,Laive,0,003-T4qWx9
+Lacteos,Yogurt Familiar,Yogurt Probiotico Lúcuma 1.8kg,8.59,50,Laive,0,003-Yw8q3D
+Lacteos,Yogurt Familiar,Yogurt TuttiFrutti 1kg,5.4,50,Gloria,0,003-Tk9al3
+Lacteos,Yogurt Familiar,Yogurt Sauco 1kg,5.4,50,Gloria,0,003-Yo9ax3
+Lacteos,Yogurt Familiar,Yogurt Guanabana 1kg,5.4,50,Gloria,0,003-PG9a2z
+Lacteos,Yogurt Familiar,Yogurt Actibio Fresa 1kg,5.4,50,Gloria,0,003-E27xAp
+Lacteos,Yogurt Personal,Yogurt Griego Natural 1kg,12.9,50,Pepega,5,003-U2q9Xl
+Lacteos,Yogurt Personal,Yogurt Battimix Vainilla,2.79,50,Gloria,0,003-T2kAxC
+Lacteos,Yogurt Personal,Yogurt Griego con Frutos del Bosque 1kg,12.9,50,Pepega,5,003-IqZ3p9
+Lacteos,Yogurt Personal,Yogurt Frutado Fresa Vidrio 900g,8.9,50,Danlac,0,003-j4Kz1p
+Lacteos,Yogurt Personal,Yogurt Battishake,1.69,50,Gloria,0,003-u4Qw9A
+Lacteos,Yogurt Personal,Yogurt Frutado Fresa,1.49,50,Gloria,0,003-Ns2M4a
+Lacteos,Yogurt Personal,Yogurt Griego,3.89,50,Gloria,0,003-pQw3t5
+Lacteos,Yogurt Personal,Yogurt Frutado Durazno,1.49,50,Gloria,0,003-zA3iqL
+Lacteos,Yogurt Personal,Biodefensa fresa,5.79,50,Laive,0,003-Xzq2k4
+Lacteos,Yogurt Personal,Yogurt Griego Frutos Rojos 800g,7.39,50,Laive,0,003-xVz2a9
+Lacteos,Yogurt Personal,Yogurt Frutado Frutos del Bosque 900g,8.9,50,Danlac,0,003-Wa3qKz
+Lacteos,Yogurt Personal,Yogurt Griego Blueberry Laive vaso,2.79,50,Laive,0,003-R9q2zC
+Lacteos,Yogurt Personal,Yogurt Griego,11.29,50,Danlac,0,003-Uf9e3W
+Lacteos,Yogurt Personal,Yogurt Frutado Aguaymanto,8.9,50,Danlac,0,003-F4zAk9
+Lacteos,Yogurt Personal,Yopimix Vainilla Chocolate,1.89,50,Laive,0,003-JcZ3a9
+Lacteos,Leche Bolsa/Botella,Leche Fresca Pasteurizada,5.5,50,Pepega,0,003-Ar3EkC
+Lacteos,Leche Bolsa/Botella,Tripack Leche UHT Entera,9.95,50,Gloria,0,003-Hg2aXk
+Lacteos,Leche Bolsa/Botella,Leche Fresca Pasteurizada 900ml,50,50,Danlac,0,003-Df2Zk9
+Lacteos,Leche Bolsa/Botella,Leche Semidescremada 900ml,3.5,50,Laive,0,003-X5aKs2
+Lacteos,Leche Bolsa/Botella,Leche 0% Lactosa 900ml,3.95,50,Laive,0,003-Fr2aK6
+Lacteos,Leche Bolsa/Botella,Leche Fresca Entera 900ml,3.5,50,Laive,0,003-Qz9a3r
+Lacteos,Leche Bolsa/Botella,Leche UHT Light 900ml,3.5,50,Gloria,0,003-Za3j5L
+Lacteos,Leche Bolsa/Botella,Leche UHT sin Lactosa 900ml,3.95,50,Gloria,0,003-yS9Qa3
+Lacteos,Leche Bolsa/Botella,Bebida Nutritiva Chocolatada 800ml,2.5,50,La Preferida,0,003-I4a3Bm
+Lacteos,Leche Bolsa/Botella,Lecha Pasteurizada Sabor Choco,6.9,50,Danlac,0,003-Ma2dKx
+Lacteos,Leche Bolsa/Botella,Bebida Chocolatada 900ml,3.7,50,Laive,0,003-Qa3cB1
+Lacteos,Leche Bolsa/Botella,Leche UHT Chocolate 900ml,4.5,50,Gloria,0,003-Z5cJ2l
+Lacteos,Leche Bolsa/Botella,Leche Entera 946ml,7.9,50,Paimonte,0,003-X9a3mN
+Lacteos,Leche Bolsa/Botella,Leche Entera Sabor Chocolate 946ml,8.5,50,Paimonte,0,003-Aw2r5P
+Carnes y Pollos,Carnes de Res,Corte Lomo Saltado 600g,32.49,30,Pepega,10,004-D2szLp
+Carnes y Pollos,Carnes de Res,Churrasco Aguja 800g,25.9,30,Pepega,10,004-K1Qlp2
+Carnes y Pollos,Carnes de Res,Ossobuco de Res 800g,19.49,30,Pepega,10,004-Za3Xn1
+Carnes y Pollos,Carnes de Res,Bisteck 500g,35.99,30,Pepega,10,004-Qa3nc5
+Carnes y Pollos,Carnes de Res,Lomo Fino de Res 1.8kg,74,30,Pepega,10,004-n3eA9z
+Carnes y Pollos,Carnes de Res,Guiso Especial 500g,34.99,30,Pepega,10,004-t2AlZ3
+Carnes y Pollos,Carnes de Res,Guiso Económico 500g,27.99,30,Pepega,10,004-Mz3gQ1
+Carnes y Pollos,Carnes de Res,Malaya 500g,28.99,30,Pepega,10,004-Bcv9a3
+Carnes y Pollos,Carnes de Res,Colita de Cuadril 800g,44.69,30,Pepega,10,004-A3xn5j
+Carnes y Pollos,Carnes de Res,Asado de Tira Deshuesado 1.2kg,33.99,30,Pepega,10,004-Bx3AnM
+Carnes y Pollos,Carnes de Res,Bisteck 500g,33.99,30,Pepega,10,004-Pf2cB1
+Carnes y Pollos,Carnes de Res,Bisteck de Cadera 500g,46.79,30,Pepega,10,004-XbN5A9
+Carnes y Pollos,Carnes de Res,Saconchado de Res 800g,18.39,30,Pepega,10,004-JtR2k1
+Carnes y Pollos,Carnes de Res,Guiso Especial 500g,32.99,30,Pepega,10,004-YsD3a9
+Carnes y Pollos,Carnes de Res,Asado Pejerrey 2kg,41.19,30,Pepega,10,004-Us3aB7
+Carnes y Pollos,Carnes de Res,Bistec Molido 500g,15.59,30,Pepega,10,004-RwD2a9
+Carnes y Pollos,Carnes de Res,Guiso Económico 500g,26.99,30,Pepega,10,004-Hr2acB
+Carnes y Pollos,Carnes de Res,Churrasco Redondo 800g,27.09,30,Pepega,10,004-cXZ3a6
+Carnes y Pollos,Carnes de Res,Lomo Fino de Res 1.8kg,27.99,30,Pepega,10,004-z2aFj5
+Carnes y Pollos,Carnes de Res,Picanha 1.5kg,46.79,30,Pepega,10,004-Gf4Ak9
+Carnes y Pollos,Carnes de Res,Asado de Tira Deshuesado 1kg,58.19,30,Pepega,10,004-BpF5a2
+Carnes y Pollos,Carnes de Pollo,Pechuga Especial Light de Pollo 0.8kg,20.99,30,Pepega,10,004-p3Azb2
+Carnes y Pollos,Carnes de Pollo,Pollo Light 2kg,13.49,30,Pepega,10,004-xVa2b9
+Carnes y Pollos,Carnes de Pollo,Filete Parrillero de Pollo 0.5kg,13.49,30,Pepega,10,004-Rw6Xz1
+Carnes y Pollos,Carnes de Pollo,Pechuga Especial de Pollo 0.8kg,20.49,30,Pepega,10,004-HjS6Az
+Carnes y Pollos,Carnes de Pollo,Pack Ahorrador de Alitas 1.2kg,12.49,30,Pepega,10,004-BgW5a7
+Carnes y Pollos,Carnes de Pollo,Piernitas de Pollo 0.5kg,15.49,30,Pepega,10,004-Yn4wP3
+Carnes y Pollos,Carnes de Pollo,Molleja de Pollo 0.5kg,10.99,30,Pepega,10,004-yZms3A
+Carnes y Pollos,Carnes de Pollo,Higado de Pollo 0.5kg,7.99,30,Pepega,10,004-KxZ6a9
+Carnes y Pollos,Carnes de Pollo,Pollo Entero 2kg,8.49,30,Pepega,10,004-Um3AzB
+Carnes y Pollos,Carnes de Pollo,Pechuga con Ala 0.8kg,30.34,30,Pepega,10,004-yZa3n8
+Carnes y Pollos,Carnes de Pollo,Muslo Light de Pollo 0.5kg,15.99,30,Pepega,10,004-eNz3p1
+Carnes y Pollos,Carnes de Pollo,Pollo sin Menudencia 2kg,10.19,30,Pepega,10,004-I7kXz1
+Carnes y Pollos,Carnes de Pollo,Muslo de Pollo 0.5kg,15.99,30,Pepega,10,004-Uw3zn5
+Carnes y Pollos,Carnes de Pollo,Sangrecita Criolla 0.5kg,6.99,30,Pepega,10,004-m4zX1h
+Carnes y Pollos,Carnes de Pollo,Pollo Trozado 2kg,8.39,30,Pepega,10,004-Ka2n5p
+Frutas y verduras,Frutas,Naranja de jugo 8u,3.39,30,Pepega,5,005-Xan2f9
+Frutas y verduras,Frutas,Maracuyá 5u,4.49,30,Pepega,5,005-Bas2Am
+Frutas y verduras,Frutas,Papaya Baby 1.2kg,4.1,30,Pepega,5,005-XcQa35 
+Frutas y verduras,Frutas,Blueberrie Premium 125g,5.7,30,Pepega,5,005-o3zNa1
+Frutas y verduras,Frutas,Palta 1kg,7.3,30,Pepega,5,005-J32zHe
+Frutas y verduras,Frutas,Platano Biscocho 1kg,4.5,30,Pepega,5,005-bVx2i4
+Frutas y verduras,Frutas,Durazno Huayco Para Dulce 750g,7,30,Pepega,5,005-c2zAk3
+Frutas y verduras,Frutas,Fresas extra tottus 500g,9.5,30,Pepega,5,005-NxZ3k5
+Frutas y verduras,Frutas,Piña golden en trozos 400g,8.3,30,Pepega,5,005-j9Av4n
+Frutas y verduras,Frutas,Papaya Premium 1.9kg,4.8,30,Pepega,5,005-P9sBn2
+Frutas y verduras,Frutas,Granadilla Premium 100gr,0.69,30,Pepega,0,005-zAnc3l
+Frutas y verduras,Frutas,Piña Golden 2kg,5.5,30,Pepega,0,005-Bv9a4m
+Frutas y verduras,Frutas,Plátano de Seda 1kg,2.79,30,Pepega,0,005-Ka2zN5
+Frutas y verduras,Frutas,Pera Packhams 700g,6.9,30,Pepega,0,005-MzA2nL
+Frutas y verduras,Frutas,Plátano de isla 160g,0.99,30,Pepega,0,005-nAz2o9
+Frutas y verduras,Frutas,Manzana Roja 600g,7.9,30,Pepega,0,005-mZ4sAl
+Frutas y verduras,Frutas,Manzana Granny Smith 600g,7.5,30,Pepega,0,005-iZan4l
+Frutas y verduras,Frutas,Manzana Delicia 500kg,3.3,30,Pepega,0,005-Ka2nf4
+Frutas y verduras,Frutas,Durazno Premium 1kg,11.3,30,Pepega,0,005-Ma3zn4
+Frutas y verduras,Frutas,Piña Hawai 1.9kg,2.49,30,Pepega,0,005-JzKa1L
+Frutas y verduras,Frutas,Manzana Fuji Importada 600g,7.9,30,Pepega,0,005-Q4kAzM
+Frutas y verduras,Frutas,Mandarina Clementina 600g,1.59,30,Pepega,0,005-Kl9zN4
+Frutas y verduras,Frutas,Membrillo 1kg,8.5,30,Pepega,0,005-MznS4a
+Frutas y verduras,Frutas,Granadilla Premium 4u,5.4,30,Pepega,0,005-Xha2Zn
+Frutas y verduras,Frutas,Carambola 1kg,5.9,30,Pepega,0,005-Mkz2nA
+Frutas y verduras,Frutas,Coco 1.1kg,5,30,Pepega,0,005-OzNa3L
+Frutas y verduras,Frutas,Mamey 1kg,9,30,Pepega,0,005-mXzn3s
+Frutas y verduras,Frutas,Cocona 1kg,9,69,Pepega,0,005-kAz5i9
+Frutas y verduras,Frutas,Naranja de mesa 800g,4.3,30,Pepega,0,005-aXn4Ap
+Frutas y verduras,Frutas,Tuna Amarilla 700g,7,30,Pepega,0,005-Yzb5aL
+Frutas y verduras,Frutas,Mango Congelado 400g,7.5,30,Pepega,0,005-GzAn4l
+Frutas y verduras,Frutas,Piña Congelada 400g,7.5,30,Pepega,0,005-aNzm2I
+Frutas y verduras,Verduras,Zanahoria 1kg,3.5,50,Pepega,5,005-AznaP3
+Frutas y verduras,Verduras,Camote Amarillo Procesado 1kg,2.29,50,Pepega,5,005-Hg2La9
+Frutas y verduras,Verduras,Espinaca 400g,6.99,50,Pepega,5,005-NzmA3x
+Frutas y verduras,Verduras,Papa Amarilla Procesada 1kg,5,50,Pepega,5,005-IzAm5w
+Frutas y verduras,Verduras,Ajo Entero 300g,4.89,50,Pepega,5,005-AzM59l
+Frutas y verduras,Verduras,Arverjita 200g,7,50,Pepega,5,005-WqXm4a
+Frutas y verduras,Verduras,Ensalada Personal 140g,6.69,50,Pepega,5,005-Zm2La7
+Frutas y verduras,Verduras,Papa Blanca Cocktail 500g,5.2,50,Pepega,5,005-AkZw2o
+Frutas y verduras,Verduras,Ensalada Rusa 500g,8.99,50,Pepega,5,005-KzM4la
+Frutas y verduras,Verduras,Champiñones Frescos Enteros 200g,5.99,50,Pepega,5,005-MznA2e
+Frutas y verduras,Verduras,Lechuga Crespa 300g,2.29,50,Pepega,5,005-YaMz2p
+Frutas y verduras,Verduras,Cebolla Roja 1kg,2.49,50,Pepega,5,005-QaIz3m
+Frutas y verduras,Verduras,Aji Verde 400g,3.5,50,Pepega,5,005-Kr2mZn
+Frutas y verduras,Verduras,Tomate Italiano Selecto,2.69,50,Pepega,5,005-Ap2mZ5
+Frutas y verduras,Verduras,Choclo Serrano Selecto,2.29,50,Pepega,5,005-TzM3k2
+Frutas y verduras,Verduras,Limon Sutil 30u,3.69,50,Pepega,5,005-Bzh2AL
+Frutas y verduras,Verduras,Lechuga Americana,2.59,50,Pepega,5,005-Xkaq2n
+Frutas y verduras,Verduras,Apio,2.59,50,Pepega,5,005-YzmAk3
+Frutas y verduras,Verduras,Beterraga,3.7,50,Pepega,5,005-LazM3w
+Frutas y verduras,Verduras,Brocoli,4.99,50,Pepega,5,005-IazN2O
+Frutas y verduras,Verduras,Culantro,1.89,50,Pepega,5,005-GatZx2
+Frutas y verduras,Verduras,Zapallo Macre,2.99,50,Pepega,5,005-JzNa4l
+Frutas y verduras,Verduras,Pepinillo,1.49,50,Pepega,5,005-Za2mC9
+Frutas y verduras,Verduras,Maíz Morado,8.6,50,Pepega,5,005-UzsN2l
+Frutas y verduras,Verduras,Zapallo Italiano,4,50,Pepega,5,005-x9aRk3
+Frutas y verduras,Verduras,Espinaca 400g,4.99,50,Pepega,5,005-Xz4Al2
+Frutas y verduras,Verduras,Albahaca,1.99,50,Pepega,5,005-BzMa2l
+Frutas y verduras,Verduras,Poro,1.99,50,Pepega,5,005-E4zmS1
+Frutas y verduras,Verduras,Caihua,1.39,50,Pepega,5,005-Lx2mA3
+Frutas y verduras,Verduras,Perejil,1.69,50,Pepega,5,005-KaIzM2
+Frutas y verduras,Verduras,Olluco,7.5,50,Pepega,5,005-YTzbnA
+Frutas y verduras,Verduras,Yuca Amarilla,3.5,50,Pepega,5,005-A2wcZn
+Frutas y verduras,Verduras,Camote Morado,2.79,50,Pepega,5,005-LqMa3n
+Frutas y verduras,Verduras,Papa Yungay 1kg,1.89,50,Pepega,5,005-LzXm2a
+Frutas y verduras,Verduras,Coliflor 1u,5.9,50,Pepega,5,005-ZMa2xL
+Frutas y verduras,Verduras,Papa Andina,4,50,Pepega,5,005-YUzN3a
+Frutas y verduras,Verduras,Rocoto,1.69,50,Pepega,5,005-QazNs2
+Frutas y verduras,Verduras,Rabanito,5.4,50,Pepega,5,005-AkzM3s
+Frutas y verduras,Verduras,Nabo,1.99,50,Pepega,5,005-Azm3Dl
+Frutas y verduras,Verduras,Papa Huayro,5,50,Pepega,5,005-UzN3a9
+Pasteles,Tortas,Torta Chantilly de Frutas Grandes,51.9,10,Pepega,15,006-Zam4Al
+Pasteles,Tortas,Torta Alemana Chica,39.9,10,Pepega,15,006-UzMa3q
+Pasteles,Tortas,Torta de Chantilly de Frutas Mediana,41.9,10,Pepega,15,006-OzMs16
+Pasteles,Tortas,Copa Mousse Chocolate 1u,5.9,10,Pepega,15,006-LzA4m5
+Pasteles,Tortas,Copa Mosaico 1u,5.9,10,Pepega,15,006-AzM6l3
+Pasteles,Kekes,Keke Marmoleado 430g,8.9,20,Pepega,10,006-sMC4Lp
+Pasteles,Kekes,Keke de Plátano 430g,8.9,20,Pepega,10,006-zAM4L3
+Pasteles,Kekes,Keke Ingles 430g,8.9,20,Pepega,10,006-LzM3a5
+Pasteles,Kekes,Keke de Chocolate 430g,8.9,20,Pepega,10,006-MxNa2c
+Pasteles,Kekes,Keke de Chocolate 850g,13.9,20,Pepega,10,006-ZalN2m
+Pasteles,Kekes,Keke con Zanahoria 470g,14.9,20,Pepega,10,006-Al4mZn
+Pasteles,Kekes,Keke Frutos Rojos 450g,14.9,20,Pepega,10,006-PqZm4S
+Pasteles,Kekes,Keke con Piña 1u,14.9,20,Pepega,10,006-RzMa3l
+Pasteles,Kekes,Keke Granos Nativos 1u,15.9,20,Pepega,10,006-AmZn9p
+Pasteles,Kekes,Keke Vegano con Coco 1u,15.9,20,Pepega,10,006-TzMSa3
+Snacks,Aceitunas,A. Botija sin Pepa 240g,5.49,30,Pepega,10,007-AlZm4a
+Snacks,Aceitunas,A. Botija con Pepa 240g,5.49,30,Pepega,10,007-Mzn2Al
+Snacks,Aceitunas,A. Verde sin Pepa 240g,5.49,30,Pepega,10,007-MznAl3
+Snacks,Aceitunas,A. Botija Seleccionada 240g,6.6,30,Pepega,10,007-xZna2l
+Snacks,Aceitunas,A. Verde Deshuesada 250g,5.8,30,Pepega,10,007-AtNm4o
+Snacks,Aceitunas,A. Verde con Rocoto 240g,5.49,30,Pepega,10,007-AmzN3e
+Snacks,Aceitunas,A. Verde con Castaña 240g,6.6,30,Pepega,10,007-AmZnc2
+Snacks,Aceitunas,A. Entera 300g,7.9,30,Pepega,10,007-ioZn3a
+Snacks,Maíz,Tortilla Maíz 150g,2.99,30,Pepega,10,007-Xa3KL9
+Snacks,Maíz,Tortees Clásico 138g,3,30,Tortees,0,007-Ka2zX9
+Snacks,Maíz,Doritos Dippas 320g,12,50,Frito Lay,0,007-KzNa2q
+Snacks,Maíz,Tortilla Frita 200g,8.5,50,Tostitos,0,007-zMa2l9
+Snacks,Maíz,Doritos Queso 150g,6.8,50,Doritos,0,007-lAzN2X
+Snacks,Maíz,Tortilla Picante 500g,7.9,50,Precio Uno,0,007-JKxM4a
+Snacks,Maíz,PopCorn,3,50,Pepega,5,007-AzN2l3
+Snacks,Maíz,PopCorn Queso,5.1,50,Pepega,5,007-QazXn3
+Snacks,Maíz,PopCorn Natural,3.7,50,Pepega,5,007-AXn23z
+Snacks,Papas,Papas Original 124g,11.9,50,Pringles,5,007-ZnEq3d
+Snacks,Papas,Papas Cebolla 124g,11.9,50,Pringles,5,007-xMaLE3
+Snacks,Papas,Al Hilo 155g,5.2,50,Lays,5,007-QzNa3l
+Snacks,Papas,Lays Clasicas,8.2,50,Lays,5,007-AXkz23
+Snacks,Papas,Lays Picante,5.6,50,Lays,5,007-QzmX34
+Snacks,Papas,Jalapeno,7.5,50,Inka Chips,5,007-qXmz2A
+Snacks,Papas,Ondas Natural,5.6,50,Lays,5,007-WxIa3l
+Bebidas,Agua,Bidon 7L,5.9,50,Pepega,5,008-QxZl34
+Bebidas,Agua,Sin gas 2.5L,2.4,50,Pepega,5,008-EaLxM2
+Bebidas,Agua,Con gas 2.5L,2.5,50,Pepega,5,008-TwXn29
+Bebidas,Agua,Sin gas 7L,6.9,50,Cielo,0,008-Cax2aV
+Bebidas,Gaseosa,Cola Negra 3L,4.5,50,Pepega,5,008-zA2ld4
+Bebidas,Gaseosa,Guarana 3LT,5.9,50,Guarana,0,008-XZam2a
+Bebidas,Gaseosa,Inca Kola 1L,4.5,50,Inca Kola,0,008-Rw2xZm
+Bebidas,Gaseosa,SevenUp 3L,4.9,50,SevenUp,0,008-Yr2xMz
+Bebidas,Gaseosa,Pepsi 3L,6.9,50,Pepsi,0,008-EWz3n1
+Bebidas,Gaseosa,Fanta Lata,4.5,50,Fanta,0,008-WmZ4A1
+Licores,Cerveza,Twelve,38.5,50,Pilsen,0,009-Nz23La
+Licores,Cerveza,SixPack,19.69,50,Pilsen,0,009-Xz9lq2
+Licores,Cerveza,Doble Malta,21.9,50,Cusquena,0,009-PeZx2q
+Licores,Cerveza,SixPack Negra,21.9,50,Cusquena,0,009-cZXe1k
+Licores,Cerveza,SixPack Dorada,21.9,50,Cusquena,0,009-Qxs4Ka
+Licores,Cerveza,SixPack Trigo,23.5,50,Cusquena,0,009-UxZ14M
+Licores,Cerveza,SixPack,26.9,50,Corona,0,009-QxN2al
+Licores,Cerveza,SixPack,26.9,50,Stella Artois,0,009-KzO4Sx
+Licores,Cerveza,SixPack,20.9,50,Cristal,0,009-WrQxn4
+Licores,Cerveza,SixPack,20.9,50,Heineken,0,009-Xz13la
+Licores,Cerveza,SixPack,21.5,50,Budweiser,0,009-JKzM4a
+Licores,Vino,Tinto Seco,14.9,50,Santiago Queirolo,0,009-XzN24a
+Licores,Vino,Tinto Frontera,23.9,50,Concha&Toro,0,009-qAXj3l
+Licores,Vino,Tinto Dulce,14.9,50,Tabernero,0,009-AnxZ4q
+Licores,Vino,Oporto,18.9,50,Vina Vieja,0,009-UrB5z4
+Licores,Vino,Blanco,39.9,50,Trivento,0,009-wNz3AL
+Licores,Whisky,Black Label,146.9,20,Johnnie Walker,0,009-TeQ1zP
+Licores,Whisky,Red Label,79.9,20,Johnnie Walker,0,009-uXzm4A
+Licores,Whisky,Red 750Ml,17.5,50,Old Times,0,009-ZN4al2
+Licores,Whisky,Gold Reserve,149.9,20,Johnnie Walker,0,009-qw2Azx
+Licores,Ron,Solera 12Años,69.9,20,Cartavio,0,009-wZXnA3
+Licores,Ron,Black 750Ml,21.9,20,Cartavio,0,009-RqwX14
+Licores,Ron,23Años 750Ml,139.9,20,Zacapa,0,009-f3znA2
+Licores,Ron,4Años 750Ml,30.9,50,Flor de Cana,0,009-Wqz1ak
+Licores,Ron,Reserva 8Años,40.9,30,Cartavio,0,009-jXzm4Q
+Licores,Pisco,Acholado,23.9,40,Pepega,10,009-bZmw2a
+Licores,Pisco,Quebranta,27.9,40,Santiago Queirolo,0,009-QzN2al
+Licores,Pisco,Acholado,27.9,40,Santiago Queirolo,0,009-sAzb2L
+Licores,Pisco,Puro Quebranta,39.9,40,Cuatro Gallos,0,009-uXnz3Q
+Licores,Pisco,Mosto Verde,79.9,30,Porton,0,009-QxZB23
+Limpieza,Higiene,Lejía,7.9,50,Pepega,5,010-2Zma4
+Limpieza,Higiene,Servilleta 100u,3.3,50,Pepega,5,010-GzA3Lc
+Limpieza,Higiene,Quitamanchas 1.8L,10.5,50,Pepega,5,010-qZ3al5
+Limpieza,Higiene,Papel Toalla,9,50,Pepega,5,010-sAzn23
+Limpieza,Higiene,Lavavajillas,26.9,50,Pepega,5,010-fRwZa3
+Limpieza,Higiene,Detergente 6kg,39.9,50,Pepega,5,010-YsZ3Dq
+Limpieza,Higiene,Suavizante Aroma,17.9,50,Pepega,5,010-rWEz91
+Limpieza,Higiene,Limpiatodo 4L,11.5,50,Pepega,5,010-rSzm4q
+Limpieza,Higiene,Limpia Vidrios,8.5,50,Pepega,5,010-TzBNA6
+Limpieza,Higiene,Toallita Desinfectante,8,50,Pepega,5,010-AQZmn4
+Limpieza,Higiene,Bolsa Basura 10u,4.5,50,Pepega,5,010-rWzN3a
+Cuidado Personal,Cabello,Shampoo 710Ml,19.9,50,Pepega,5,011-QWx4Al
+Cuidado Personal,Cabello,Shampoo Anticaspa,16.9,50,Pepega,5,011-xCz23A
+Cuidado Personal,Cabello,Shampoo Colageno,12.5,50,Savital,0,011-QazL3w
+Cuidado Personal,Cabello,Shampoo Restauracion,15.9,50,Pantene,0,011-vCX9q2
+Cuidado Personal,Cabello,Shampoo Limpieza,39.9,50,Head Shoulders,0,011-cNZx49
+Cuidado Personal,Corporal,Talco,16.5,50,Pepega,5,011-uXzN34
+Cuidado Personal,Corporal,Desodorante,7.9,50,Pepega,5,011-bZne4Q
+Cuidado Personal,Corporal,Jabon Glicerina,5.8,50,Pepega,5,011-yZ8mS3
+Cuidado Personal,Corporal,Jabon Avena&Miel,5.9,50,Pepega,5,011-iZne3A
+Cuidado Personal,Corporal,Jabon Aloe&Oliva,7.59,48,Palmolive,0,011-OaX31p
+Cuidado Personal,Corporal,Jabon Antibacterial,7.99,50,Protex,0,011-dSaxN3
+Cuidado Personal,Corporal,Jabon Liquido,9.2,50,Protex,0,011-tZa3k1
+Cuidado Personal,Dental,Crema,4.5,50,Pepega,5,011-kZma34
+Cuidado Personal,Dental,Cepillo,9,45,Pepega,5,011-jZmcx3
+Cuidado Personal,Dental,Enjuague Bocal,13.4,50,Pepega,5,011-kZnc3a
+Cuidado Personal,Dental,Pasta TripleAccion,10.5,50,Pepega,50,011-nZqf3A
+Cuidado Personal,Dental,Luminous White,16.4,38,Pepega,5,011-hXZbe2
