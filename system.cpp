@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//funcion de registro de usuarios nuevos
 void System::register_user()
 {
     std::ofstream regis;
@@ -46,6 +47,7 @@ void System::register_user()
     regis.close();
 }
 
+//funcion de inicio de sesion para todos los usuarios 
 std::string System::log_in()
 {
     std::vector<std::vector<std::string>> credentials;
@@ -82,6 +84,7 @@ std::string System::log_in()
     }
 }
 
+//funcion para imprimir diferentes menus segun el modo que se solicite
 void System::printMenu(std::string mode)
 {
     if (mode == "logo")
@@ -163,6 +166,7 @@ void System::printMenu(std::string mode)
     }
 }
 
+//primer menu del programa con tres diferentes opciones: register, log in y exit
 std::string System::loginMenu()
 {
     int option;
@@ -209,6 +213,7 @@ std::string System::loginMenu()
     return sup_id;
 }
 
+//menu principal dependiendo del modo que se pase como argumento: client o admin
 std::string System::mainMenu(std::string mode)
 {
     std::string option;
@@ -253,6 +258,7 @@ std::string System::mainMenu(std::string mode)
     return option;
 }
 
+//funcion que procesa la opcion segun el modo y el numero de opcion que se escogio en el mainMenu
 std::string System::processMainMenuOption(std::string mode, std::string option)
 {
     if (option == "1")
@@ -311,6 +317,7 @@ std::string System::processMainMenuOption(std::string mode, std::string option)
     return "nan";
 }
 
+//funcion que permite tanto al cliente como al administrador buscar productos
 void System::browseProducts()
 {
     system("CLS");
@@ -352,6 +359,7 @@ void System::browseProducts()
     }
 }
 
+//funcion que le permite al cliente comprar los items en su carrito de compras
 bool System::buyProductsInCart(Client &cliente)
 {
     std::vector<Purchase> content;

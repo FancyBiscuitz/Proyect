@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//constructor de cliente mediante los datos en un vector
 Client::Client(std::vector<std::vector<std::string>> data)
 {
     setNames(data[0][0]);
@@ -14,11 +15,13 @@ Client::Client(std::vector<std::vector<std::string>> data)
     credit = 1000.0;
 }
 
+//constructor default
 Client::Client()
 {
     
 }
 
+//anade items al carro de compras del cliente
 void Client::addProductsToShoppingCart()
 {
     string id;
@@ -69,6 +72,7 @@ void Client::addProductsToShoppingCart()
     }
 }
 
+//muestra los items que tiene un cliente en su carrito
 void Client::viewShoppingCartProducts()
 {
     std::vector<std::vector<std::string>> shopcart;
@@ -89,6 +93,7 @@ void Client::viewShoppingCartProducts()
     showData(shopcart, "products");
 }
 
+//ellimina items del carro de compras del cliente
 void Client::deleteProducsFromShoppingCart()
 {
     std::string _id;
@@ -105,6 +110,7 @@ void Client::deleteProducsFromShoppingCart()
     }
 }
 
+//deja vacio el carrito de compras del cliente
 void Client::emptyShoppingCart()
 {
     int sup = shoppingCart.size() - 1;
@@ -115,6 +121,7 @@ void Client::emptyShoppingCart()
     }
 }
 
+//getters
 std::vector<Item> Client::getShoppingCart()
 {
     return shoppingCart;
@@ -130,6 +137,7 @@ float Client::getCredit()
     return credit;
 }
 
+//carga el carrito de compras del cliente en caso que haya cerrado sesion sin vaciar el carrito
 void Client::loadShopCart()
 {
     std::string fil = getId() + "_shopcart.csv";
@@ -168,6 +176,7 @@ void Client::loadShopCart()
     shopcart.close();
 }
 
+//guarda los items del carro del cliente en un archivo si es que este no esta vacio 
 void Client::saveShopCart()
 {
     std::ofstream newh(getId() + "_shopcart.csv");
@@ -178,6 +187,7 @@ void Client::saveShopCart()
     newh.close();
 }
 
+//setter de credit
 void Client::setCredit(float _newCredit)
 {
     credit = _newCredit;

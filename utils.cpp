@@ -4,7 +4,101 @@
 
 using namespace std;
 
-//utils
+//funcion para obtener informacion de archivos csv y sus distintas versiones
+std::vector<std::vector<std::string>> getData(std::string support, int index, std::string file, int columms)
+{
+    std::vector<std::vector<std::string>> res;
+    std::vector<std::string> credentials;
+    std::string usersup;
+    int i = 0;
+    std::ifstream users;
+    users.open(file, ios::in);
+    while (users.good())
+    {
+        if (i == columms-1)
+        {
+            std::getline(users, usersup, '\n');
+            credentials.push_back(usersup);
+            if (credentials[index] == support)
+            {
+                res.push_back(credentials);
+            }
+            credentials = {};
+            i = -1;
+        }
+        else
+        {
+            std::getline(users, usersup, ',');
+            credentials.push_back(usersup);
+        }
+        i++;
+    }
+    users.close();
+    return res;
+}
+
+std::vector<std::vector<std::string>> getData(std::string file, int columms)
+{
+    std::vector<std::vector<std::string>> res;
+    std::vector<std::string> credentials;
+    std::string usersup;
+    int i = 0;
+    std::ifstream users;
+    users.open(file, ios::in);
+    while (users.good())
+    {
+        if (i == columms-1)
+        {
+            std::getline(users, usersup, '\n');
+            credentials.push_back(usersup);
+            res.push_back(credentials);
+            credentials = {};
+            i = -1;
+        }
+        else
+        {
+            std::getline(users, usersup, ',');
+            credentials.push_back(usersup);
+        }
+        i++;
+    }
+    users.close();
+    return res;
+}
+
+std::vector<std::string> getDataCol(std::string file, int columm, int columms)
+{
+    std::vector<std::string> res;
+    std::string usersup;
+    int i = 0;
+    std::ifstream users;
+    users.open(file, ios::in);
+    while (users.good())
+    {
+        if (i == columms-1)
+        {
+            std::getline(users, usersup, '\n');
+            if (i == columm)
+            {
+                res.push_back(usersup);
+            }
+            i = -1;
+        }
+        else
+        {
+            std::getline(users, usersup, ',');
+            if (i == columm)
+            {
+                res.push_back(usersup);
+            }
+        }
+        i++;
+    }
+    users.close();
+    return res;
+}
+
+//generador de ids randomizadas
 std::string itemIdMaker(std::string base, int size)
 {
     srand(time(NULL));
@@ -19,7 +113,8 @@ std::string itemIdMaker(std::string base, int size)
     id = base + "-" + id;
     return id;
 }
-//utils
+
+//funcion para resolver algunos problemas con el std::cin
 void clean_stdin(void)
 {
     int c;
@@ -28,7 +123,32 @@ void clean_stdin(void)
     } while (c != '\n' && c != EOF);
 }
 
-//system
+//funcion para determinar que tipo de usuario se va a registrar
+std::string getRole()
+{
+    int attempts =  3;
+    std::string m;
+    std::cout << "Who is registering?" << std::endl << "[1] Admin | [2] Client" << std::endl;
+    std::cin >> m;
+    if (m == "1")
+    {
+        while (attempts > 0)
+        {
+            if (attempts < 3) {std::cout << "You have " << attempts << "attempts left." << std::endl;}
+            std::cout << "Password to add new admin: " << std::endl << ">";
+            std::cin >> m;
+            if (m == "ultrasecretpassword")
+            {
+                return "adm";
+            }
+            attempts--;
+        }
+        return "nan";
+    }
+    return "usr";
+}
+
+//funcion para registrar un nuevo usuario
 void register_user()
 { 
     std::ofstream regis;
@@ -73,7 +193,8 @@ void register_user()
     }
     regis.close();
 }
-//system
+
+//funcion de inicio de sesion
 std::string log_in()
 {
     std::vector<std::vector<std::string>> credentials;
@@ -113,7 +234,8 @@ std::string log_in()
         return "0";
     }
 }
-//utils
+
+//generador aleatorio de ids para productos
 std::string getProductId(std::string category)
 {
     vector<string> categories {"Abarrotes", "Desayuno", "Lacteos", "Carnes y pollos", "Frutas y verduras", "Pasteles", "Snacks", "Bebidas", "Licores", "Limpieza", "Cuidado personal"};
@@ -131,185 +253,7 @@ std::string getProductId(std::string category)
     return itemIdMaker(initials[z], 6);
 }
 
-//utils
-void addProduct()
-{
-    std::ofstream products;
-    products.open("products.csv", ios::app); // Abre el archivo
-    std::string category, description, id, definition, brand;
-    int price, stock;
-    int i = 0;
-    std::vector<std::string> list = getDataCol("products.csv", 2, 7);
-    if(products.good())
-    {
-        products << "\n";
-        std::cout << "Category: ";
-        std::getline(std::cin, category);
-        products << category << ",";
-        std::cout << std::endl;
-
-        std::cout << "Description: ";
-        std::getline(std::cin, description);
-        products << description << ",";
-        std::cout << std::endl;
-
-        do
-        {
-            if (i > 0) {std::cout << "Product already exists." << std::endl;}
-            std::cout << "Definition: ";
-            std::getline(std::cin, definition);
-            std::cout << std::endl;
-            i++;
-        } while (std::find(list.begin(), list.end(), definition) != list.end());
-        products << definition << ",";
-
-        std::cout << "Price: ";
-        std::cin >> price;
-        products << price << ",";
-        std::cout << std::endl;
-
-        std::cout << "Stock: ";
-        std::cin >> stock;
-        products << stock << ",";
-        std::cout << std::endl;
-
-        std::cout << "Brand: ";
-        std::getline(std::cin, brand);
-        std::getline(std::cin, brand);
-        products << brand << ",";
-        std::cout << std::endl;
-
-        products << getProductId(category);
-    }
-    products.close();
-}
-//utils
-std::vector<std::vector<std::string>> getData(std::string support, int index, std::string file, int columms)
-{
-    std::vector<std::vector<std::string>> res;
-    std::vector<std::string> credentials;
-    std::string usersup;
-    int i = 0;
-    std::ifstream users;
-    users.open(file, ios::in);
-    while (users.good())
-    {
-        if (i == columms-1)
-        {
-            std::getline(users, usersup, '\n');
-            credentials.push_back(usersup);
-            if (credentials[index] == support)
-            {
-                res.push_back(credentials);
-            }
-            credentials = {};
-            i = -1;
-        }
-        else
-        {
-            std::getline(users, usersup, ',');
-            credentials.push_back(usersup);
-        }
-        i++;
-    }
-    users.close();
-    return res;
-}
-//utils
-std::vector<std::vector<std::string>> getData(std::string file, int columms)
-{
-    std::vector<std::vector<std::string>> res;
-    std::vector<std::string> credentials;
-    std::string usersup;
-    int i = 0;
-    std::ifstream users;
-    users.open(file, ios::in);
-    while (users.good())
-    {
-        if (i == columms-1)
-        {
-            std::getline(users, usersup, '\n');
-            credentials.push_back(usersup);
-            res.push_back(credentials);
-            credentials = {};
-            i = -1;
-        }
-        else
-        {
-            std::getline(users, usersup, ',');
-            credentials.push_back(usersup);
-        }
-        i++;
-    }
-    users.close();
-    return res;
-}
-//utils
-std::vector<std::string> getDataCol(std::string file, int columm, int columms)
-{
-    std::vector<std::string> res;
-    std::string usersup;
-    int i = 0;
-    std::ifstream users;
-    users.open(file, ios::in);
-    while (users.good())
-    {
-        if (i == columms-1)
-        {
-            std::getline(users, usersup, '\n');
-            if (i == columm)
-            {
-                res.push_back(usersup);
-            }
-            i = -1;
-        }
-        else
-        {
-            std::getline(users, usersup, ',');
-            if (i == columm)
-            {
-                res.push_back(usersup);
-            }
-        }
-        i++;
-    }
-    users.close();
-    return res;
-}
-
-//utils
-bool deleteElementTest(std::string id)
-{
-    std::vector<std::vector<std::string>> data;
-    data = getData("products.csv", 7);
-    std::remove("products.csv");
-    int sup = 0;
-    bool res = false;
-
-    std::ofstream newfile("products.csv");
-    
-    for (int i = 0; i < data.size(); i++)
-    {
-        if (data[i][data[i].size()-1] == id)
-        {
-            res = true;
-            continue;
-        }
-        for (int j = 0; j < data[0].size(); j++)
-        {
-            if (j == data[0].size()-1)
-            {
-                newfile << data[i][j] << "\n";
-                continue;
-            }
-            newfile << data[i][j] << ",";
-        }
-    }
-    newfile.close();
-    return res;
-}
-
-//utils
+//funcion para imprimir adecuadamente el espacion entre cada campo de la tabla en la terminal
 void outSpaced(std::string word, int spacing)
 {
     int left = spacing/2;
@@ -327,7 +271,7 @@ void outSpaced(std::string word, int spacing)
     std::cout << lefts << word << rights;
 }
 
-//utils
+//fucnion para mostrar informacion en un formato similar a una tabla
 void showData(std::vector<std::vector<std::string>> data, std::string mode)
 {
     if (data.size() == 0)
@@ -398,31 +342,7 @@ void showData(std::vector<std::vector<std::string>> data, std::string mode)
     std::cout << ceilfloor;
 }
 
-//utils
-std::string getRole()
-{
-    int attempts =  3;
-    std::string m;
-    std::cout << "Who is registering?" << std::endl << "[1] Admin | [2] Client" << std::endl;
-    std::cin >> m;
-    if (m == "1")
-    {
-        while (attempts > 0)
-        {
-            if (attempts < 3) {std::cout << "You have " << attempts << "attempts left." << std::endl;}
-            std::cout << "Password to add new admin: " << std::endl << ">";
-            std::cin >> m;
-            if (m == "ultrasecretpassword")
-            {
-                return "adm";
-            }
-            attempts--;
-        }
-        return "nan";
-    }
-    return "usr";
-}
-//utils
+//checkead si una id es valida
 bool validateId(std::string id, std::string file, int coluums)
 {
     std::vector<std::string> ids = getDataCol(file, coluums-1, coluums);
@@ -435,7 +355,8 @@ bool validateId(std::string id, std::string file, int coluums)
     }
     return false;
 }
-//utils
+
+//funcion para obterner la fecha y hora actual
 std::string getTimeDate()
 {
     time_t now = time(0);
@@ -446,85 +367,8 @@ std::string getTimeDate()
    dt = asctime(gmtm);
    return dt;
 }
-//system
-void printMenu(std::string mode)
-{
-    if (mode == "logo")
-    {
-        std::cout <<    "⠁⠁⠁⠁⠁⠁⠐⢶⣶⣶⣶⣤⣤⡀⠁⠁⣠⣀⣀⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁"<< "\n";
-        std::cout <<    "⠁⠁⠁⠁⠁⠁⠁⠁⠙⢿⣯⣠⣶⣦⣤⣤⣌⣛⠻⢇⣠⣤⣤⠁⠁⠁⠁⠁⠁⠁"<< "\n";
-        std::cout <<    "⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠻⣿⣿⣿⡟⢉⡤⢤⣤⣤⡍⠛⢡⢖⣥⣶⣦⣀⠁⠁"<< "\n";
-        std::cout <<   " ⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⣠⣿⣿⣿⡏⣭⣶⣿⣿⠟⢿⣦⡡⣿⣿⡇⠁⡙⣷⡀"<< "\n";
-        std::cout <<    "⠁⠁⠁⠁⠁⠁⠁⣀⣴⣿⣿⣿⣿⣿⣿⡞⣿⣿⡟⢀⡀⣿⣿⢻⣿⣿⣀⣁⣿⠏"<< "\n";
-        std::cout <<    "⠁⠁⠁⢀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣟⢰⢻⣿⣇⣈⣴⣿⠟⢨⣛⠛⠛⠉⠁⠁"<< "\n";
-        std::cout <<    "⠁⣠⣶⣿⣿⡟⢋⠤⣤⠘⢿⣿⣧⡙⠻⠌⠒⠙⠛⢛⣫⣥⣿⣦⡈⠉⣡⣴⣾⠇"<< "\n";
-        std::cout <<    "⢰⣿⣿⣿⣿⠁⡇⠁⠙⠷⣤⡙⠻⢿⣿⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⠿⠟⠋⠁⠁"<< "\n";
-        std::cout <<    "⠘⣿⣿⣿⣿⣆⠻⣄⠁⣀⡀⠉⠙⠒⠂⠉⠍⠉⠉⠉⠉⣩⣍⣁⣂⡈⠠⠂⠁⠁"<< "\n";
-        std::cout <<    "⠁⠘⢿⣿⣿⣿⣦⡉⠳⢬⣛⠷⢦⡄⠁⠁⠁⠁⠁⣀⣼⣿⣿⠿⠛⠋⠁⠁⠁⠁"<< "\n";
-        std::cout <<    "⠁⠁⠁⠉⠻⢿⣿⣿⣷⣦⣬⣍⣓⡒⠒⣒⣂⣠⡬⠽⠓⠂⠁⠁⠁⠁⠁⠁" << "\n";
-    }
-    if (mode == "client")
-    {
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                     WELCOME TO PEPEGACODING MARKET                  |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                        Please select an option.                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|            [1]Browse products          [2]Show cart                 |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|        [3]Buy products in cart     [4]Log out     [5]Close          |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-    }
-    if (mode == "admin")
-    {
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                             ADMIN MENU                              |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                       Please select an option.                      |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|   [1]Browse products     [2]Add products        [3]Delete products  |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|   [4]Change price        [5]Change stock        [6]Change discount  |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                  [7]Log out             [8]Close                    |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-    }
-    if (mode == "browse")
-    {
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                             Browse by:                              |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|     [1]Category            [3]Definition           [2]Brand         |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                              [4]Return                              |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-    }
-    if (mode == "login")
-    {
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                          First time here?                           |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                             [1]Register                             |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                      Already have an account?                       |" << "\n";
-        std::cout <<"|                                                                     |" << "\n";
-        std::cout <<"|                              [2]Log in                              |" << "\n";
-        std::cout <<"|                                                        [3]Close     |" << "\n";
-        std::cout << " ---------------------------------------------------------------------" << "\n";
-    }
-}
-//utils
+
+//funcion de apoyo para saber que tipo de usuario inicia sesion
 std::string getInitials(std::string word, int limit)
 {
     std::string res;
@@ -534,7 +378,8 @@ std::string getInitials(std::string word, int limit)
     }
     return res;
 }
-//utils
+
+//funcion de apoyo para confirmar la validez de una opcion dada por el usuario
 std::string checkValidOption(std::string option, int limit, std::string defaul)
 {
     int sup = std::stoi(option);
@@ -544,142 +389,3 @@ std::string checkValidOption(std::string option, int limit, std::string defaul)
     }
     return option;
 }   
-//system
-std::string loginMenu()
-{
-    int option;
-    std::string sup_id = "1";
-    while (sup_id.size() == 1)
-    {
-       printMenu("login");
-       std::cout << "\n" << ">> ";
-       std::cin >> option;
-       system("CLS");
-       switch (option)
-       {
-            case 1:
-                register_user();
-                system("PAUSE");
-                system("CLS");
-                break;
-
-            case 2:
-                do
-                {
-                    sup_id = log_in();
-                    if (sup_id == "0")
-                    {
-                        std::cout << "couldnt log in." << std::endl;
-                        std::cout << "[1]Try again       [2]Return" << std::endl << ">> ";
-                        std::cin >> sup_id;
-                        sup_id = checkValidOption(sup_id, 2, "2");
-                    }
-                } while (sup_id == "1");
-                system("PAUSE");
-                system("CLS");
-                break;
-
-            case 3:
-                std::cout << "Program closed";
-                exit(1);
-                break;
-            
-            default:
-                break;
-       }
-    }
-    return sup_id;
-}
-//system
-std::string mainMenu(std::string mode)
-{
-    std::string option;
-    printMenu(mode);
-    std::cout << ">> ";
-    std::cin >> option;
-    option = checkValidOption(option, 5, "0");
-    if (mode == "client")
-    {
-        switch (std::stoi(option))
-        {
-
-        case 4:
-            return "logout";
-            break;
-        case 5:
-            exit(1);
-            break;
-        
-        default:
-            return option;
-            break;
-        }
-    }
-    if (mode == "admin")
-    {
-        switch (std::stoi(option))
-        {
-
-        case 7:
-            return "logout";
-            break;
-        case 8:
-            exit(1);
-            break;
-        
-        default:
-            return option;
-            break;
-        }
-    }
-    return "nan";
-}
-
-
-//system
-std::string processMainMenuOption(std::string mode, std::string option)
-{
-    if (option == "1")
-    {
-        return option;
-    }
-    if (mode == "client")
-    {
-        switch (std::stoi(option))
-        {
-        case 2:
-            return option;
-            break;
-        case 3:
-            return option;
-            break;
-        default:
-            break;
-        }
-    }
-    if (mode == "admin")
-    {
-        switch (std::stoi(option))
-        {
-        case 2:
-            return "4";
-            break;
-        case 3:
-            return "5";
-            break;
-        case 4:
-            return "6";
-            break;
-        case 5:
-            return "7";
-            break;
-        case 6:
-            return "8";
-            break;
-        default:
-            break;
-        }
-    }
-    return "nan";
-}
-
