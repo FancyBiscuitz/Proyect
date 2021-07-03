@@ -20,6 +20,27 @@ bool Bill::validateBill(Client &_cliente)
     return true;
 }
 
+//sacar la informacion de cada purchase del vector de contents de bill
+std::vector<std::vector<std::string>> Bill::makeBill()
+{
+    std::vector<std::vector<std::string>> res;
+    std::vector<std::string> sup;
+    for (int i = 0; i < contents.size(); i++)
+    {
+        sup.push_back(contents[i].getItemId());
+        sup.push_back(contents[i].getItemBrand());
+        sup.push_back(contents[i].getItemDefinition());
+        sup.push_back(std::to_string(contents[i].getItemPrice()));
+        sup.push_back(std::to_string(contents[i].getAmount()));
+        sup.push_back(std::to_string(contents[i].getItemDiscount()));
+        sup.push_back(std::to_string(contents[i].getTotal()));
+        sup.push_back(contents[i].getBuyer());
+        res.push_back(sup);
+        sup = {};
+    }
+    return res;
+}
+
 //imprime los detalles de la compra
 void Bill::printBill(Client &_cliente)
 {
@@ -88,27 +109,6 @@ void Bill::addPurchasesToRecord()
         purchases << "\n";
     }
     purchases.close();
-}
-
-//sacar la informacion de cada purchase del vector de contents de bill
-std::vector<std::vector<std::string>> Bill::makeBill()
-{
-    std::vector<std::vector<std::string>> res;
-    std::vector<std::string> sup;
-    for (int i = 0; i < contents.size(); i++)
-    {
-        sup.push_back(contents[i].getItemId());
-        sup.push_back(contents[i].getItemBrand());
-        sup.push_back(contents[i].getItemDefinition());
-        sup.push_back(std::to_string(contents[i].getItemPrice()));
-        sup.push_back(std::to_string(contents[i].getAmount()));
-        sup.push_back(std::to_string(contents[i].getItemDiscount()));
-        sup.push_back(std::to_string(contents[i].getTotal()));
-        sup.push_back(contents[i].getBuyer());
-        res.push_back(sup);
-        sup = {};
-    }
-    return res;
 }
 
 //guarda la compra en un historial personal de usuario

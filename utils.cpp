@@ -238,7 +238,7 @@ std::string log_in()
 //generador aleatorio de ids para productos
 std::string getProductId(std::string category)
 {
-    vector<string> categories {"Abarrotes", "Desayuno", "Lacteos", "Carnes y pollos", "Frutas y verduras", "Pasteles", "Snacks", "Bebidas", "Licores", "Limpieza", "Cuidado personal"};
+    vector<string> categories {"Abarrotes", "Desayuno", "Lacteos", "Carnes y pollos", "Frutas y verduras", "Pasteles", "Snacks", "Bebidas", "Licores", "Limpieza", "Cuidado Personal"};
     vector<string> initials {"001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011"};
     int z;
 
