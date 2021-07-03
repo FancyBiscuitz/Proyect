@@ -1,5 +1,6 @@
 #include "purchase.h"
 
+//contructor de purchase con diferentes parametros necesarios
 Purchase::Purchase(Item _pdt, int _amount, std::string client_id)
 {
     buyer = client_id;
@@ -20,6 +21,7 @@ Purchase::Purchase(Item _pdt, int _amount, std::string client_id)
     total = (itemPrice - (itemPrice*(itemDiscount/100.0)) )* (float) amount;
 }
 
+//getters
 std::string Purchase::getBuyer() {return buyer;}
 std::string Purchase::getItemId() {return itemId;}
 std::string Purchase::getItemDefinition() {return itemDefinition;}

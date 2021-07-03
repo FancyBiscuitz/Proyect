@@ -1,5 +1,6 @@
 #include "product.h"
 
+//getters para tener acceso a la informacion del producto
 std::string Product::getId()
 {
     return id;
@@ -20,6 +21,7 @@ int Product::getStock()
     return stock;
 }
 
+//setters para cambiar las especificaciones del producto
 void Product::setId(std::string _id)
 {
     id = _id;
@@ -40,4 +42,3 @@ void Product::setBrand(std::string _brand)
 {
     brand = _brand;
 }
-

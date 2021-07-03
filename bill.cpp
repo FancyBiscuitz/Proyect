@@ -1,5 +1,6 @@
 #include "bill.h"
 
+//constructor de bill usando un vector de purchases
 Bill::Bill(std::vector<Purchase> _contents)
 {
     contents = _contents;
@@ -9,22 +10,7 @@ Bill::Bill(std::vector<Purchase> _contents)
     }
 }
 
-void Bill::processBill(Client &_cliente)
-{
-    Admin master;
-    std::vector<std::vector<std::string>> sup;
-    for (int i = 0; i < contents.size(); i++)
-    {
-        master.changeStock(contents[i].getItemId(), contents[i].getStock() - contents[i].getAmount());
-    }
-    addPurchasesToRecord();
-    sup = makeBill();
-    std::string str = _cliente.getId() + "_history" + ".csv";
-    addBillToRecord(sup, str);
-    _cliente.getShoppingCart().clear();
-    printBill(_cliente);
-}
-
+//checkea que el total de la compra no exceda el credito del cliente
 bool Bill::validateBill(Client &_cliente)
 {
     if (_cliente.getCredit() < total)
@@ -34,6 +20,7 @@ bool Bill::validateBill(Client &_cliente)
     return true;
 }
 
+//imprime los detalles de la compra
 void Bill::printBill(Client &_cliente)
 {
     int biggest = 10;
@@ -83,6 +70,7 @@ void Bill::printBill(Client &_cliente)
     std::cout << " " << ceilfloor << std::endl;
 }
 
+//guarda cada compra en el archivo general de compras csv
 void Bill::addPurchasesToRecord()
 {
     std::fstream purchases;
@@ -102,6 +90,7 @@ void Bill::addPurchasesToRecord()
     purchases.close();
 }
 
+//sacar la informacion de cada purchase del vector de contents de bill
 std::vector<std::vector<std::string>> Bill::makeBill()
 {
     std::vector<std::vector<std::string>> res;
@@ -122,6 +111,7 @@ std::vector<std::vector<std::string>> Bill::makeBill()
     return res;
 }
 
+//guarda la compra en un historial personal de usuario
 void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::string userHistoryFile)
 {
     std::ifstream test(userHistoryFile);
@@ -165,6 +155,24 @@ void Bill::addBillToRecord(std::vector<std::vector<std::string>> _content, std::
     history.close();
 }
 
+//funcion que realiza la compra cuando se le permite al cliente hacer una compra
+void Bill::processBill(Client &_cliente)
+{
+    Admin master;
+    std::vector<std::vector<std::string>> sup;
+    for (int i = 0; i < contents.size(); i++)
+    {
+        master.changeStock(contents[i].getItemId(), contents[i].getStock() - contents[i].getAmount());
+    }
+    addPurchasesToRecord();
+    sup = makeBill();
+    std::string str = _cliente.getId() + "_history" + ".csv";
+    addBillToRecord(sup, str);
+    _cliente.getShoppingCart().clear();
+    printBill(_cliente);
+}
+
+//calcular el total de compra
 float Bill::getTotal()
 {
     return total;

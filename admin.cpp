@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 
+//constructor de admin obteniendo los datos mediante un vector
 Admin::Admin(std::vector<std::vector<std::string>> data)
 {
     setNames(data[0][0]);
@@ -14,11 +15,13 @@ Admin::Admin(std::vector<std::vector<std::string>> data)
     setId(data[0][6]);
 }
 
+//cosntructor default 
 Admin::Admin()
 {
 
 }
 
+//fucnion que le permite a un administrador anadir productos al archivo csv de productos
 void Admin::addProducts()
 {
     std::ofstream products;
@@ -27,7 +30,6 @@ void Admin::addProducts()
     int stock, discount;
     float price;
     int i = 0;
-    std::vector<std::string> list = getDataCol("products.csv", 2, 8);
     if(products.good())
     {
         fflush(stdin);
@@ -41,17 +43,12 @@ void Admin::addProducts()
         std::getline(std::cin, description);
         products << description << ",";
         std::cout << std::endl;
-
-        do
-        {
-            if (i > 0) {std::cout << "Product already exists." << std::endl;}
-            std::cout << "Definition: ";
-            std::getline(std::cin, definition);
-            std::cout << std::endl;
-            i++;
-        } while (std::find(list.begin(), list.end(), definition) != list.end());
+        
+        std::cout << "Definition: ";
+        std::getline(std::cin, definition);
         products << definition << ",";
-
+        std::cout << std::endl;
+        
         std::cout << "Price: ";
         std::cin >> price;
         products << price << ",";
@@ -78,6 +75,7 @@ void Admin::addProducts()
     products.close();
 }
 
+//eliminar productos del archivo csv
 bool Admin::deleteProducts(std::string id)
 {
     bool res = false;
@@ -123,6 +121,7 @@ bool Admin::deleteProducts(std::string id)
     return res;
 }
 
+//modificar el precio de un producto en el archivo csv
 bool Admin::changePrice(std::string id, float modify)
 {
     std::vector<std::vector<std::string>> all = getData("products.csv", 8);
@@ -163,6 +162,7 @@ bool Admin::changePrice(std::string id, float modify)
     return res;
 }
 
+//modificar el stock de un producto en el archivo csv
 bool Admin::changeStock(std::string id, int modify)
 {
     std::vector<std::vector<std::string>> all = getData("products.csv", 8);
@@ -203,6 +203,7 @@ bool Admin::changeStock(std::string id, int modify)
     return res;
 }
 
+//modificar el discount de un producto en el archivo csv
 bool Admin::changeDiscount(std::string id, int modify)
 {
     std::vector<std::vector<std::string>> all = getData("products.csv", 8);
@@ -243,6 +244,7 @@ bool Admin::changeDiscount(std::string id, int modify)
     return res;
 }
 
+//mostrar e imprimir las compras hechas por un cliente en especifico o de todos los clientes
 void Admin::viewPurchases()
 {
     std::string id;
